@@ -1,2 +1,13 @@
-<h1>Items#index</h1>
-<p>Find me in app/views/items/index.html.erb</p>
+<h1>Inventory</h1>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <% @items.forEach do |i| %>
+    	<%= i.image %>
+    	<%= i.name %>
+    	<button class="btn btn-default" type="submit">Add To List</button>
+    	<button class="btn btn-default" type="submit">Delete</button>
+    <% end %>
+  </div>
+</div>
+
