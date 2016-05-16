@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  amount_left: MyString
+  regular_id: 
+
+two:
+  amount_left: MyString
+  regular_id: 
