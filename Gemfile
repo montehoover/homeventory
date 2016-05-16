@@ -1,5 +1,10 @@
 source 'https://rubygems.org'
 
+
+gem 'omniauth'
+
+gem 'omniauth-facebook'
+
 gem 'bootstrap_form'
 
 gem 'factual-api'
