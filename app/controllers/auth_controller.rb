@@ -19,6 +19,7 @@ def logout
       u.email = provider_user['info']['email']
     end
     #attach a uer id to a the current session
+    
     session[:user_id] = oauthuser.id
     #redirect the user to the homepage
     redirect_to root_path
