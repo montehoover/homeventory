@@ -1,8 +1,27 @@
-<h1>New User Signup</h1>
+<!-- landing page -->
+<section id="row1">
+<div class= "col-xs-12">
+  <h1 id = "brand">Welcome</h1>
+  <p>Find me in app/views/users/new.html.erb</p>
+</div>
+</section>
 
+<section id="row2">
+  <div class= "col-xs-12">
+    <h5>Sign Up</h5>
+      <%= bootstrap_form_for :user do |f|  %>
+      <%= f.text_field :email, placeholder: "Enter your email" %>
+      <%= f.password_field :password, placeholder: "Create a password" %>
+      <%= f.primary "Signup" %>
+      <% end %>
+     <% if @current_user %>
+            <span style="color:black;"><%= @current_user.email %> is logged in</span>  |  
+            <% end %>
+              <% if @current_user %>
+            <a class="nav-links" href="/logout">logout</a>
+            <%else%>
+            <a class="nav-links" href="/login">Already have an account?</a>
+            <% end %>
+  </div>
+</section>
 
-<%= form_for :user do |f|  %>
-<%= f.text_field :email, placeholder: "Enter your email" %>
-<%= f.password_field :password, placeholder: "Create a password" %>
-<%= f.submit "Signup" %>
-<% end %>
