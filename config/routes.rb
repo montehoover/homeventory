@@ -1,16 +1,18 @@
 Rails.application.routes.draw do
 
-  get 'users/new'
+
 
   get 'users/create'
 
-  root 'main#index'
+  root 'users#new'
+  # get '/' => 'users#new'
+  post '/' => 'users#create'
 
   get 'restricted' => 'main#restricted'
 
   get 'signup' => 'users#new'
 
-  post 'users/new' => 'users#create'
+
 
   get "login" => "sessions#new"
   post "login" => "sessions#create"
