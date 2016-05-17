@@ -1,23 +1,29 @@
 Rails.application.routes.draw do
 
 
-  get 'lists/index'
-
-  get 'users/create'
-
+  #users 
   root 'users#new'
 
+  get 'users/create'
+  post '/' => 'users#create'
+  get 'signup' => 'users#new'
+  
+  ##password controller routes
+  get 'reset' => 'passwords#new'
+  post 'reset' => 'passwords#create'
+  get 'reset/:code' => 'passwords#edit', as: :reset_code
+  put 'reset/:code' => 'passwords#update'
+
+
+ #main
   get 'restricted' => 'main#restricted'
 
-  get 'signup' => 'users#new'
-
-  post 'users/new' => 'users#create'
-
+  #sessions
   get "login" => "sessions#new"
   post "login" => "sessions#create"
   get 'logout' => 'sessions#destroy'
 
-
+  #auth
   get 'auth/logout' => 'auth#logout'
   get 'auth/failure' => 'auth#failure'
   get 'auth/:provider/callback' => 'auth#callback'
@@ -25,6 +31,7 @@ Rails.application.routes.draw do
   get 'items' => 'items#index'
   delete 'items/:id' => 'items#destroy'
 
+  #favorites
   get 'favorites' => 'favorites#index'
 
 
