@@ -1,4 +1,5 @@
 class FactualController < ApplicationController
+  before_action :is_authenticated?
   require 'factual'
   
 
