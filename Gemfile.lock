@@ -188,6 +188,7 @@ DEPENDENCIES
   factual-api
   jbuilder (~> 2.0)
   jquery-rails
+  json
   letter_opener
   omniauth
   omniauth-facebook
