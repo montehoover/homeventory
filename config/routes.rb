@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
 
 
+  get 'favorites/index'
+
   get 'users/create'
 
   root 'users#new'
@@ -20,6 +22,8 @@ Rails.application.routes.draw do
   get 'auth/logout' => 'auth#logout'
   get 'auth/failure' => 'auth#failure'
   get 'auth/:provider/callback' => 'auth#callback'
+
+  get 'favorites' => 'favorites#index'
 
   resources :items
 
