@@ -14,11 +14,16 @@ Rails.application.routes.draw do
 
 
 
+
   #users 
+  # make 'login' root
   root 'users#new'
 
+
   get 'users/create'
+  # change to 'signup'
   post '/' => 'users#create'
+  # duplicate (can be deleted)
   get 'signup' => 'users#new'
   
   ##password controller routes
@@ -51,14 +56,17 @@ Rails.application.routes.draw do
   get 'auth/:provider/callback' => 'auth#callback'
 
   get 'items' => 'items#index'
-  delete 'items/:id' => 'items#destroy'
+  delete 'item/:id' => 'items#destroy'
 
   #favorites
   get 'favorites' => 'favorites#index'
 
+  get 'lists' => 'lists#index'
+
 
   resources :items
   resources :favorites
+  resources :lists
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
