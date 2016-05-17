@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
 
 
-  get 'lists/index'
-
   get 'users/create'
 
   root 'users#new'
@@ -27,9 +25,12 @@ Rails.application.routes.draw do
 
   get 'favorites' => 'favorites#index'
 
+  get 'lists' => 'lists#index'
+
 
   resources :items
   resources :favorites
+  resources :lists
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
