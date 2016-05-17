@@ -1,0 +1,6 @@
+<h1>Product Search</h1>
+
+<form action="<%= factual_show_path %>" method="get">
+  <%= text_field_tag :q, params[:q] %>
+  <%= submit_tag "search", :name => nil %>
+</form>

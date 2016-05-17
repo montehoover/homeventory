@@ -2,6 +2,12 @@ Rails.application.routes.draw do
 
 
 
+  get 'factual/' => 'factual#index'
+
+  get 'factual/show' => 'factual#show'
+
+  post 'factual/create' => 'factual#create'
+
   get 'users/create'
 
   root 'users#new'

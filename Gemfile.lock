@@ -176,6 +176,7 @@ DEPENDENCIES
   factual-api
   jbuilder (~> 2.0)
   jquery-rails
+  json
   omniauth
   omniauth-facebook
   pg (~> 0.15)
