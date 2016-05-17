@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160517145308) do
+ActiveRecord::Schema.define(version: 20160517194540) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,6 +72,12 @@ ActiveRecord::Schema.define(version: 20160517145308) do
   add_index "items", ["favorite_id"], name: "index_items_on_favorite_id", using: :btree
   add_index "items", ["user_id"], name: "index_items_on_user_id", using: :btree
 
+  create_table "list_items", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "oauthusers", force: :cascade do |t|
     t.string   "provider"
     t.string   "provider_id"
@@ -88,6 +94,8 @@ ActiveRecord::Schema.define(version: 20160517145308) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "name"
+    t.string   "reset_code"
+    t.datetime "expires_at"
   end
 
   add_foreign_key "categories_items", "categories"

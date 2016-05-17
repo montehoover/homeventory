@@ -2,13 +2,7 @@ Rails.application.routes.draw do
 
   get 'results/' => 'results#index'
 
-  # get 'results/new'
-
-  # get 'results/create'
-
   get 'results/show' => 'results#show'
-
-  root 'main#index'
 
   get 'factual/' => 'factual#index'
 
@@ -16,10 +10,24 @@ Rails.application.routes.draw do
 
   post 'factual/create' => 'factual#create'
 
-  get 'signup' =>'users#new'
 
-  post 'signup' => 'users#create'
 
+  #users 
+  root 'users#new'
+
+  get 'users/create'
+  post '/' => 'users#create'
+  get 'signup' => 'users#new'
+  
+  ##password controller routes
+  get 'reset' => 'passwords#new'
+  post 'reset' => 'passwords#create'
+  get 'reset/:code' => 'passwords#edit', as: :reset_code
+  put 'reset/:code' => 'passwords#update'
+
+
+
+ #main
   get 'restricted' => 'main#restricted'
 
   
@@ -28,17 +36,27 @@ Rails.application.routes.draw do
 
   
 
+
+  #sessions
+
   get "login" => "sessions#new"
   post "login" => "sessions#create"
   get 'logout' => 'sessions#destroy'
 
-
+  #auth
   get 'auth/logout' => 'auth#logout'
   get 'auth/failure' => 'auth#failure'
   get 'auth/:provider/callback' => 'auth#callback'
 
+  get 'items' => 'items#index'
+  delete 'items/:id' => 'items#destroy'
+
+  #favorites
+  get 'favorites' => 'favorites#index'
+
 
   resources :items
+  resources :favorites
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
