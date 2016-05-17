@@ -12,6 +12,7 @@
 
 
 
+
 <%= form_tag("/results/show", method: "post") do %>
   <%= label_tag(:count, "Count:") %>
   <%= text_field_tag(:count) %>
@@ -20,5 +21,7 @@
   <%= hidden_field_tag(:name, @result[0]['product_name']) %>
   <%= hidden_field_tag(:img_url, urls[0]) %>
   <%= hidden_field_tag(:factual_id, @result[0]['factual_id']) %>
+  <%= hidden_field_tag(:user_id, @current_user[:id]) %>
+
   <%= submit_tag("Submit") %>
 <% end %>
