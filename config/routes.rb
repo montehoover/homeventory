@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
 
-  get 'users/new'
+
 
   get 'users/create'
 
-  root 'main#index'
+  root 'users#new'
 
   get 'restricted' => 'main#restricted'
 
