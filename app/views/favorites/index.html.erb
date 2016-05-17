@@ -1,13 +1,13 @@
 <div class="container">
 	<h1>Favorites</h1>
-	<div class="panel panel-default">
-	  <div class="panel-body">
-	    <% @favorite.each do |f| %>
-	    	<%= f.name %>
-	    <% end %>
-	    	<button class="btn btn-default" type="submit">Add To Inventory</button>
-	    	<button class="btn btn-default" type="submit">Delete</button>
-	  </div>
-	</div>
+		<% @favorite.each do |favorite| %>
+			<div class="panel panel-default">
+	  		<div class="panel-body">
+	    		<%= favorite.name %>
+		    	<button class="btn btn-default" type="submit">Add To Inventory</button>
+	  	  	<button class="btn btn-default" type="submit">Delete</button>
+	  		</div>
+			</div>
+	 <% end %>
 </div>
 
