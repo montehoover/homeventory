@@ -1,4 +1,5 @@
 class ResultsController < ApplicationController
+  before_action :is_authenticated?
   def index
     @item = Item.new
     factual = Factual.new("EQaaFMK4DkRvfGT5GyYTEaCaUJ9Xzcfn9BALb0AA", "0bpbMmOJlirClLtE9aEpXgtUZfrhmePb4ucTAA5t")
@@ -14,22 +15,21 @@ class ResultsController < ApplicationController
 
   def new
     @result = :item
-    puts @result
   end
 
   def create
-     params = factual_params
-    puts params
-
-    item = Item.create params do |i|
-    puts i
-    i[:user_id] = @current_user[:user_id]
-    i.save
-    redirect_to factual_path
+    puts @current_user[:user_id]
+    item = Item.create item_params do |i|
+      i[:user_id] = @current_user[:user_id]
+      i.save
+      redirect_to factual_path
+    end
   end
-end
-    def factual_params
-    params.require(:item).permit(:name, :category)
+  
+  private
+
+  def item_params
+    {name: params[:name], img_url: params[:img_url], factual_id: params[:factual_id], count: params[:count], exp_date: params[:exp_date]}
   end
 end
 

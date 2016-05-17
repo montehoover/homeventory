@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get 'results/show' => 'results#show'
 
+  post 'results/show' => 'results#create'
+
   get 'factual/' => 'factual#index'
 
   get 'factual/show' => 'factual#show'
