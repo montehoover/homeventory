@@ -19,17 +19,15 @@ class ResultsController < ApplicationController
 
   def create
     puts @current_user[:user_id]
-    item = Item.create item_params do |i|
-      i[:user_id] = @current_user[:user_id]
-      i.save
+    item = Item.create item_params 
       redirect_to factual_path
-    end
+    
   end
   
   private
 
   def item_params
-    {name: params[:name], img_url: params[:img_url], factual_id: params[:factual_id], count: params[:count], exp_date: params[:exp_date]}
+    {name: params[:name], img_url: params[:img_url], factual_id: params[:factual_id], count: params[:count], exp_date: params[:exp_date], user_id: params[:user_id]}
   end
 end
 
