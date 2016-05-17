@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   get 'auth/failure' => 'auth#failure'
   get 'auth/:provider/callback' => 'auth#callback'
 
-
+  get 'items/index' => 'items#index'
   resources :items
 
   # The priority is based upon order of creation: first created -> highest priority.

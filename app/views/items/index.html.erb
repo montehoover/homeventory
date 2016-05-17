@@ -1,13 +1,13 @@
-<h1>Inventory</h1>
-
-<div class="panel panel-default">
-  <div class="panel-body">
-    <% @items.forEach do |i| %>
-    	<%= i.image %>
-    	<%= i.name %>
-    	<button class="btn btn-default" type="submit">Add To List</button>
-    	<button class="btn btn-default" type="submit">Delete</button>
-    <% end %>
-  </div>
+<div class="container">
+	<h1>Inventory</h1>
+	<div class="panel panel-default">
+	  <div class="panel-body">
+	    <% @regulars.each do |i| %>
+	    	<%= i.name %>
+	    <% end %>
+	    	<button class="btn btn-default" type="submit">Add To List</button>
+	    	<button class="btn btn-default" type="submit">Delete</button>
+	  </div>
+	</div>
 </div>
 
