@@ -1,13 +1,14 @@
-<h1>Inventory</h1>
-
-<div class="panel panel-default">
-  <div class="panel-body">
-    <% @items.forEach do |i| %>
-    	<%= i.image %>
-    	<%= i.name %>
-    	<button class="btn btn-default" type="submit">Add To List</button>
-    	<button class="btn btn-default" type="submit">Delete</button>
-    <% end %>
-  </div>
+<div class="container">
+	<h1>Inventory</h1>
+		<% @items.each do |i| %>
+			<div class="panel panel-default">
+	  		<div class="panel-body">
+	    		<img src="<%= i.img_url %>">
+	    		<%= i.name %>
+		    	<button class="btn btn-default" type="submit">Add To List</button>
+		    	<button class="btn btn-default" type="submit">Delete</button>
+		  	</div>
+			</div>
+		<% end %>
 </div>
 

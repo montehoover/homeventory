@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   #users 
   root 'users#new'
   get 'users/create'
@@ -25,6 +26,9 @@ Rails.application.routes.draw do
   get 'auth/failure' => 'auth#failure'
   get 'auth/:provider/callback' => 'auth#callback'
 
+  #favorites
+  get 'favorites/index'
+  get 'favorites' => 'favorites#index'
 
   resources :items
 

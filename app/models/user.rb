@@ -7,7 +7,8 @@ class User < ActiveRecord::Base
 
   has_secure_password
 
-  has_many :regular
+  has_many :favorite
+  has_many :item
 
   def self.authenticate email, password
     User.find_by_email(email).try(:authenticate, password)
