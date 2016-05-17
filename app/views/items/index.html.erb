@@ -1,14 +1,16 @@
 <div class="container">
-	<h1>Inventory</h1>
-		<% @items.each do |i| %>
+	<div class="col-xs-12">
+		<h1>Inventory</h1>
+		<% @items.each do |item| %>
 			<div class="panel panel-default">
 	  		<div class="panel-body">
-	    		<img src="<%= i.img_url %>">
-	    		<%= i.name %>
-		    	<button class="btn btn-default" type="submit">Add To List</button>
-		    	<button class="btn btn-default" type="submit">Delete</button>
+	    		<img src="<%= item.img_url %>">
+	    		<%= item.name %>
+		    	<button class="btn btn-default" id="add-to-list" type="submit">Add To List</button>
+		    	<button class="btn btn-default" id="delete-item" type="submit">Delete</button>
 		  	</div>
 			</div>
 		<% end %>
+	</div>
 </div>
 
