@@ -3,8 +3,17 @@ class ItemsController < ApplicationController
   	@items = Item.all
   end
 
+  def new
+  	@item = Item.new
+  end
+
+  def show
+    @item = Item.find params[:id]
+  end
+
   def destroy
-    Item.find(params[:id]).delete
+    deleted_item = Item.find(params[:id]).delete
+    flash[:danger] = "The #{deleted_item.name} item has been deleted."
     redirect_to items_path
   end
 end

@@ -10,4 +10,5 @@ $('#delete-item').on('click',function(e){
         btn.closest('item').remove();
       }
     })
+  });
 });

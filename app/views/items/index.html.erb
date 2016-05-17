@@ -1,14 +1,19 @@
 <div class="container">
-	<h1>Inventory</h1>
-		<% @items.each do |i| %>
+	<div class="col-xs-12">
+		<h1>Inventory</h1>
+		<% @items.each do |item| %>
 			<div class="panel panel-default">
 	  		<div class="panel-body">
-	    		<img src="<%= i.img_url %>">
-	    		<%= i.name %>
-		    	<button class="btn btn-default" type="submit">Add To List</button>
-		    	<button class="btn btn-default" type="submit">Delete</button>
+	    		<img src="<%= item.img_url %>">
+	    		<a href="items/<%= item.id %>"><%= item.name %></a>
+		    	<button class="btn btn-default" id="add-to-list" type="submit">Add To List</button>
+		    	<!-- <button class="btn btn-default" id="delete-item" type="submit">Delete</button> -->
+		    	<%= link_to "Delete", item_path(item), method: :delete, class: "btn btn-default" %>
+		    	<!-- item_path(item) translates to "/items/:id" -->
+
 		  	</div>
 			</div>
 		<% end %>
+	</div>
 </div>
 
