@@ -17,8 +17,9 @@ Category.create(name: "Frozen")
 Category.create(name: "Toiletry")
 puts "Created Category: '#{Category.first.name}' and #{Category.all.length} others."
 
-Regular.Create
+User.first.regular.create(name: "banana", description: "A tropical fruit", exp_date: )
 
+name: "banana", description: nil, restock_amount: nil, exp_date: nil, usage_date: nil, is_favorite: nil, max_ever_stocked: nil, category_id: nil, user_id: 3,
 
 # for user in User.all
 #   user.destroy

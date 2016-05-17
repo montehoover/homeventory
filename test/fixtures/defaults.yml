@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  restock_amount: 1.5
+  max_amount_sofar: 1.5
+  fresh_duration: 
+  avg_use_duration: 
+
+two:
+  name: MyString
+  restock_amount: 1.5
+  max_amount_sofar: 1.5
+  fresh_duration: 
+  avg_use_duration: 

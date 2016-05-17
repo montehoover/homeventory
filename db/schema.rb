@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160516194117) do
+ActiveRecord::Schema.define(version: 20160517145308) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,14 +22,55 @@ ActiveRecord::Schema.define(version: 20160516194117) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "items", force: :cascade do |t|
-    t.string   "amount_left"
-    t.integer  "regular_id"
+  create_table "categories_items", force: :cascade do |t|
+    t.integer  "category_id"
+    t.integer  "item_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
-  add_index "items", ["regular_id"], name: "index_items_on_regular_id", using: :btree
+  add_index "categories_items", ["category_id"], name: "index_categories_items_on_category_id", using: :btree
+  add_index "categories_items", ["item_id"], name: "index_categories_items_on_item_id", using: :btree
+
+  create_table "defaults", force: :cascade do |t|
+    t.string   "name"
+    t.float    "restock_amount"
+    t.float    "max_amount_sofar"
+    t.integer  "fresh_duration"
+    t.integer  "avg_use_duration"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  create_table "favorites", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "favorites", ["user_id"], name: "index_favorites_on_user_id", using: :btree
+
+  create_table "items", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.integer  "fresh_duration"
+    t.datetime "exp_date"
+    t.integer  "avg_use_duration"
+    t.datetime "use_date"
+    t.float    "restock_amount"
+    t.float    "amount_left"
+    t.string   "img_url"
+    t.integer  "default_id"
+    t.integer  "favorite_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.integer  "user_id"
+  end
+
+  add_index "items", ["default_id"], name: "index_items_on_default_id", using: :btree
+  add_index "items", ["favorite_id"], name: "index_items_on_favorite_id", using: :btree
+  add_index "items", ["user_id"], name: "index_items_on_user_id", using: :btree
 
   create_table "oauthusers", force: :cascade do |t|
     t.string   "provider"
@@ -41,23 +82,6 @@ ActiveRecord::Schema.define(version: 20160516194117) do
     t.datetime "updated_at",    null: false
   end
 
-  create_table "regulars", force: :cascade do |t|
-    t.string   "name"
-    t.string   "description"
-    t.float    "restock_amount"
-    t.datetime "exp_date"
-    t.datetime "usage_date"
-    t.boolean  "is_favorite"
-    t.float    "max_ever_stocked"
-    t.integer  "category_id"
-    t.integer  "user_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-  end
-
-  add_index "regulars", ["category_id"], name: "index_regulars_on_category_id", using: :btree
-  add_index "regulars", ["user_id"], name: "index_regulars_on_user_id", using: :btree
-
   create_table "users", force: :cascade do |t|
     t.string   "email"
     t.string   "password_digest"
@@ -66,7 +90,10 @@ ActiveRecord::Schema.define(version: 20160516194117) do
     t.string   "name"
   end
 
-  add_foreign_key "items", "regulars"
-  add_foreign_key "regulars", "categories"
-  add_foreign_key "regulars", "users"
+  add_foreign_key "categories_items", "categories"
+  add_foreign_key "categories_items", "items"
+  add_foreign_key "favorites", "users"
+  add_foreign_key "items", "defaults"
+  add_foreign_key "items", "favorites"
+  add_foreign_key "items", "users"
 end

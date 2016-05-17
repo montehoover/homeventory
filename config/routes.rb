@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
 
-  get 'users/new'
+
 
   get 'users/create'
 
-  root 'main#index'
+  root 'users#new'
 
   get 'restricted' => 'main#restricted'
 
@@ -21,7 +21,6 @@ Rails.application.routes.draw do
   get 'auth/failure' => 'auth#failure'
   get 'auth/:provider/callback' => 'auth#callback'
 
-  get 'items/index' => 'items#index'
   resources :items
 
   # The priority is based upon order of creation: first created -> highest priority.
