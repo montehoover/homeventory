@@ -1,13 +1,27 @@
 Rails.application.routes.draw do
 
+  get 'results/' => 'results#index'
+
+  get 'results/show' => 'results#show'
+
+  get 'factual/' => 'factual#index'
+
+  get 'factual/show' => 'factual#show'
+
+  post 'factual/create' => 'factual#create'
+
+
 
 
   #users 
+  # make 'login' root
   root 'users#new'
 
 
   get 'users/create'
+  # change to 'signup'
   post '/' => 'users#create'
+  # duplicate (can be deleted)
   get 'signup' => 'users#new'
   
   ##password controller routes
@@ -17,10 +31,19 @@ Rails.application.routes.draw do
   put 'reset/:code' => 'passwords#update'
 
 
+
  #main
   get 'restricted' => 'main#restricted'
 
+  
+
+  # get 'signup' => 'users#new'
+
+  
+
+
   #sessions
+
   get "login" => "sessions#new"
   post "login" => "sessions#create"
   get 'logout' => 'sessions#destroy'
