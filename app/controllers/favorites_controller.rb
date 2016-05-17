@@ -3,8 +3,8 @@ class FavoritesController < ApplicationController
   	@favorite = Favorite.all
   end
 
-  def create
-  	
+  def new
+  	@favorite = Favorite.new
   end
 
   def destroy
