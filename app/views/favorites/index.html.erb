@@ -4,8 +4,9 @@
 			<div class="panel panel-default">
 	  		<div class="panel-body">
 	    		<%= favorite.name %>
-		    	<button class="btn btn-default" id="add-to-inv" type="submit">Add To Inventory</button>
-	  	  	<button class="btn btn-default" id="delete-from-favs" type="submit">Delete</button>
+		    	<button class="btn btn-default pull-right" id="add-to-inv" type="submit">Add To Inventory</button>
+	  	  	
+	  	  	<%= link_to "Delete", favorite_path(favorite), method: :delete, class: "btn btn-default pull-right", id: "delete-btn" %>
 	  		</div>
 			</div>
 	 <% end %>

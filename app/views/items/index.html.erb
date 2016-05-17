@@ -8,7 +8,13 @@
 	    		<a href="items/<%= item.id %>"><%= item.name %></a>
 		    	<button class="btn btn-default" id="add-to-list" type="submit">Add To List</button>
 		    	<!-- <button class="btn btn-default" id="delete-item" type="submit">Delete</button> -->
-		    	<%= link_to "Delete", item_path(item), method: :delete, class: "btn btn-default" %>
+		    	<%= link_to "+list", item_path(item), method: :delete, class: "btn btn-success" %>
+
+
+		    	<%= link_to "+Fav", item_path(item), method: :delete, class: "btn btn-primary" %>
+
+		    	<!-- delete btn works! -->
+		    	<%= link_to "Delete", item_path(item), method: :delete, class: "btn btn-danger" %>
 		    	<!-- item_path(item) translates to "/items/:id" -->
 
 		  	</div>
