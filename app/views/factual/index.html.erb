@@ -1,4 +1,4 @@
-<h1>Product Search</h1>
+
 <% if @current_user %>
           <span style="color:black;"><%= @current_user.email %> is logged in</span>  |  
           <% end %>
@@ -8,8 +8,10 @@
           <a class="nav-links" href="/login">login</a>
           <% end %>
 
-          
-<form action="<%= results_path %>" method="get">
-  <%= text_field_tag :q, params[:q] %>
-  <%= submit_tag "search", :name => nil %>
-</form>
+<h1 class="search-bar">Product Search</h1>  
+<div class="search-form">        
+	<form action="<%= results_path %>" method="get">
+	  <%= text_field_tag :q, params[:q] %>
+	  <%= submit_tag "search", :name => nil %>
+	</form>
+</div>

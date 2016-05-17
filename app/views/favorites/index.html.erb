@@ -3,9 +3,13 @@
 		<% @favorite.each do |favorite| %>
 			<div class="panel panel-default">
 	  		<div class="panel-body">
-	    		<%= favorite.name %>
-		    	<button class="btn btn-default" id="add-to-inv" type="submit">Add To Inventory</button>
-	  	  	<button class="btn btn-default" id="delete-from-favs" type="submit">Delete</button>
+	    		<div class="favorite-name">
+	    			<%= favorite.name %>
+	    		</div>
+	    		<div class="favorite-buttons">
+			    	<button class="btn btn-default" id="add-to-inv" type="submit">Add To Inventory</button>
+		  	  	<button class="btn btn-default" id="delete-from-favs" type="submit">Delete</button>
+	  	  	</div>
 	  		</div>
 			</div>
 	 <% end %>
