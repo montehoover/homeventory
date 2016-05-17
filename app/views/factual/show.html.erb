@@ -6,9 +6,10 @@
         <% @url = result['image_urls'] %>
           <li> 
           <%= result['product_name']%>(<%=result['unit_size']%>, <%=result['category']%>)
-          <%= link_to "Select", factual_create_path(:name => @name, :img_url => @url), item: @item, :method => :post %>
+         <%= link_to result['product_name'], factual_create_path(:item => { :name => @name, :img_url => @url }), :method => :post %>
           </li>
       <% end %>
       </ul>
+
 
  

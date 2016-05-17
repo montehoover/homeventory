@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-
+  root 'main#index'
 
   get 'factual/' => 'factual#index'
 
@@ -8,15 +8,17 @@ Rails.application.routes.draw do
 
   post 'factual/create' => 'factual#create'
 
-  get 'users/create'
+  get 'signup' =>'users#new'
 
-  root 'users#new'
+  post 'signup' => 'users#create'
 
   get 'restricted' => 'main#restricted'
 
-  get 'signup' => 'users#new'
+  
 
-  post 'users/new' => 'users#create'
+  # get 'signup' => 'users#new'
+
+  
 
   get "login" => "sessions#new"
   post "login" => "sessions#create"

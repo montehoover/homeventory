@@ -1,5 +1,14 @@
 <h1>Product Search</h1>
+<% if @current_user %>
+          <span style="color:black;"><%= @current_user.email %> is logged in</span>  |  
+          <% end %>
+            <% if @current_user %>
+          <a class="nav-links" href="/logout">logout</a>
+          <%else%>
+          <a class="nav-links" href="/login">login</a>
+          <% end %>
 
+          
 <form action="<%= factual_show_path %>" method="get">
   <%= text_field_tag :q, params[:q] %>
   <%= submit_tag "search", :name => nil %>

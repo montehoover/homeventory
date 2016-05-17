@@ -2,10 +2,11 @@
 <p>Find me in app/views/main/index.html.erb</p>
 
  <% if @current_user %>
-          <span style="color:black;"><%= @current_user.email %> is logged in</span>  |  
-          <% end %>
-            <% if @current_user %>
-          <a class="nav-links" href="/logout">logout</a>
-          <%else%>
-          <a class="nav-links" href="/login">login</a>
-          <% end %>
+  <span style="color:black;"><%= @current_user.email %> is logged in</span>   
+<% end %>
+
+<% if @current_user %>
+  <a class="nav-links" href="/logout">logout</a>
+<%else%>
+  <a class="nav-links" href="/login">login</a>
+<% end %>
