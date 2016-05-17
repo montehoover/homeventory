@@ -9,7 +9,7 @@
           <% end %>
 
           
-<form action="<%= factual_show_path %>" method="get">
+<form action="<%= results_path %>" method="get">
   <%= text_field_tag :q, params[:q] %>
   <%= submit_tag "search", :name => nil %>
 </form>

@@ -1,15 +1,1 @@
-<h1>Factual Results</h1>
- 
-        <ul>
-        <% @results.each do |result| %>
-        <% @name = result['product_name'] %>
-        <% @url = result['image_urls'] %>
-          <li> 
-          <%= result['product_name']%>(<%=result['unit_size']%>, <%=result['category']%>)
-         <%= link_to result['product_name'], factual_create_path(:item => { :name => @name, :img_url => @url }), :method => :post %>
-          </li>
-      <% end %>
-      </ul>
 
-
- 

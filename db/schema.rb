@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160517014252) do
+ActiveRecord::Schema.define(version: 20160517145308) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,10 +65,12 @@ ActiveRecord::Schema.define(version: 20160517014252) do
     t.integer  "favorite_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.integer  "user_id"
   end
 
   add_index "items", ["default_id"], name: "index_items_on_default_id", using: :btree
   add_index "items", ["favorite_id"], name: "index_items_on_favorite_id", using: :btree
+  add_index "items", ["user_id"], name: "index_items_on_user_id", using: :btree
 
   create_table "oauthusers", force: :cascade do |t|
     t.string   "provider"
@@ -93,4 +95,5 @@ ActiveRecord::Schema.define(version: 20160517014252) do
   add_foreign_key "favorites", "users"
   add_foreign_key "items", "defaults"
   add_foreign_key "items", "favorites"
+  add_foreign_key "items", "users"
 end

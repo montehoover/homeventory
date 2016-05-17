@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'results/' => 'results#index'
+
+  # get 'results/new'
+
+  # get 'results/create'
+
+  get 'results/show' => 'results#show'
+
   root 'main#index'
 
   get 'factual/' => 'factual#index'
