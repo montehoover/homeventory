@@ -1,9 +1,27 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  amount_left: MyString
-  regular_id: 
+  name: MyString
+  description: MyString
+  fresh_duration: 
+  exp_date: 2016-05-16 18:41:56
+  avg_use_duration: 
+  use_date: 2016-05-16 18:41:56
+  restock_amount: 1.5
+  amount_left: 1.5
+  img_url: MyString
+  default_id: 
+  favorite_id: 
 
 two:
-  amount_left: MyString
-  regular_id: 
+  name: MyString
+  description: MyString
+  fresh_duration: 
+  exp_date: 2016-05-16 18:41:56
+  avg_use_duration: 
+  use_date: 2016-05-16 18:41:56
+  restock_amount: 1.5
+  amount_left: 1.5
+  img_url: MyString
+  default_id: 
+  favorite_id: 
