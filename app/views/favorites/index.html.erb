@@ -1,12 +1,11 @@
 <div class="container">
-	<h1>Inventory</h1>
+	<h1>Favorites</h1>
 	<div class="panel panel-default">
 	  <div class="panel-body">
-	    <% @regulars.each do |i| %>
-	    	<%= i.img_url %>
-	    	<%= i.name %>
+	    <% @favorite.each do |f| %>
+	    	<%= f.name %>
 	    <% end %>
-	    	<button class="btn btn-default" type="submit">Add To List</button>
+	    	<button class="btn btn-default" type="submit">Add To Inventory</button>
 	    	<button class="btn btn-default" type="submit">Delete</button>
 	  </div>
 	</div>
