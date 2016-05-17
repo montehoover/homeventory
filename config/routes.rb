@@ -2,10 +2,13 @@ Rails.application.routes.draw do
 
 
   #users 
+  # make 'login' root
   root 'users#new'
 
   get 'users/create'
+  # change to 'signup'
   post '/' => 'users#create'
+  # duplicate (can be deleted)
   get 'signup' => 'users#new'
   
   ##password controller routes
