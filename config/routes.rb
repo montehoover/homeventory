@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
 
 
-
-  get 'favorites/index'
+  get 'lists/index'
 
   get 'users/create'
 
@@ -23,9 +22,14 @@ Rails.application.routes.draw do
   get 'auth/failure' => 'auth#failure'
   get 'auth/:provider/callback' => 'auth#callback'
 
+  get 'items' => 'items#index'
+  delete 'items/:id' => 'items#destroy'
+
   get 'favorites' => 'favorites#index'
 
+
   resources :items
+  resources :favorites
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
