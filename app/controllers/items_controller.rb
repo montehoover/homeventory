@@ -3,9 +3,8 @@ class ItemsController < ApplicationController
   	@items = Item.all
   end
 
-  def create
-  	Item.create item_params
-    redirect_to item_path
+  def new
+  	@item = Item.new
   end
 
   def show
