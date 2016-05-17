@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gem 'omniauth'
 
 gem 'omniauth-facebook'
-
+gem 'bootstrap-sass'
 gem 'bootstrap_form'
 
 gem 'factual-api'
