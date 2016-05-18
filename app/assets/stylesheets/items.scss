@@ -1,3 +1,98 @@
-// Place all the styles related to the items controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.inv-img {
+	text-align: center;
+}
+
+.inv-name {
+  float: right;
+	display: block;
+	vertical-align: top;
+	font-size: 20px;
+	font-family: 'Noticia Text', serif;
+	text-align: center;
+  border: 1px solid black;
+}
+
+.inv-buttons {
+	text-align: center;
+	display: inline-block;
+}
+
+.item-img {
+	float: left;
+}
+
+.item-name {
+	margin-top: 10px;
+	margin-bottom: 15px;
+}
+
+
+
+
+
+.show-item-name {
+	color: black;
+	text-align: center;
+	font-family: 'Noticia Text', serif;
+	font-size: 20px;
+}
+
+.quan {
+	color:black;
+	text-align: center;
+}
+
+.show-buttons {
+	text-align: center;
+}
+
+.show-img {
+	text-align: center;
+}
+
+
+
+@media (max-width: 400px) {
+	.item-thumb {
+		width: 75px;
+	}
+	.item-img {
+		float: left;
+		/*display: block;*/
+		/*text-align: center;*/
+	}
+	.inv-name {
+		font-size: 15px;
+	}
+	.inv-buttons {
+		float: right;
+		margin-right: 10px;
+	}
+}
+
+@media (min-width: 401px) and (max-width: 600px) {
+	img {
+		max-height: 100px;
+	}
+}
+
+
+.inventory-header {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.btn-sq-xs {
+  background-color: #441744 !important;
+  border: 1px solid #1e0a1e !important;
+  width: 170px !important;
+  height: 25px !important;
+  padding:2px;
+  margin-left: 5px;
+  margin-bottom: 10px;
+}

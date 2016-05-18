@@ -3,7 +3,7 @@ require 'pry'
 
 class ListsController < ApplicationController
   def index
-  	@list = List.all
+  	@list = List_Item.all
   end
 
 

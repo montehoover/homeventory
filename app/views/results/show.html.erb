@@ -1,28 +1,37 @@
-<h1>Results#show</h1>
-<p>Find me in app/views/results/show.html.erb</p>
-<%= @result[0]['product_name'] %>
-<% urls = @result[0]['image_urls'] %>
-<img src="<%= urls[0] %>">
 
+<div class="container">
+	<div class="col-xs-12">
+		<h1 class="results">Search Results</h1>
 
+		<div class="result-name-img">
+			<div class="result-img">
+				<% urls = @result[0]['image_urls'] %>
+				<img class="img-result" src="<%= urls[0] %>">
+			</div>
+			<div class="result-name">
+				<%= @result[0]['product_name'] %>
+			</div>
+		</div>
 
+		<div class="results-info">
+			<%= form_tag("/results/show", method: "post") do %>
+			  <div class="count">
+			  <%= label_tag(:count, "Count:") %>
+			  <%= text_field_tag(:count) %>
+			  </div>
+			  <div class="expiration">
+			  <%= label_tag(:exp_date, "Expiration Date:") %>
+			  <%= date_field_tag('exp_date') %>
+			  </div>
+			  <%= hidden_field_tag(:name, @result[0]['product_name']) %>
+			  <%= hidden_field_tag(:img_url, urls[0]) %>
+			  <%= hidden_field_tag(:factual_id, @result[0]['factual_id']) %>
+			  <%= hidden_field_tag(:user_id, @current_user[:id]) %>
+			  <div class="submit-item">
+			  <%= submit_tag("Submit") %>
+			  </div>
+			<% end %>
+		</div>
+	</div>
+</div>
 
-
-
-
-
-
-
-<%= form_tag("/results/show", method: "post") do %>
-  <%= label_tag(:count, "Count:") %>
-  <%= number_field_tag(:count) %>
-  <%= label_tag(:exp_date, "Expiration Date:") %>
-  <%= date_field_tag('exp_date') %>
-  <%= hidden_field_tag(:name, @result[0]['product_name']) %>
-  <%= hidden_field_tag(:img_url, urls[0]) %>
-  <%= hidden_field_tag(:factual_id, @result[0]['factual_id']) %>
-  <%= hidden_field_tag(:is_favorite, false) %>
-  <%= hidden_field_tag(:user_id, @current_user[:id]) %>
-
-  <%= submit_tag("Submit") %>
-<% end %>

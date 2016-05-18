@@ -1,9 +1,10 @@
 class FavoritesController < ApplicationController
   def index
-  	@favorite = Favorite.all
+  	@favorite = Item.all.where(is_favorite: true)
+
   end
 
-  def new
+  def new 
   	@favorite = Favorite.new
   end
 
@@ -19,6 +20,9 @@ class FavoritesController < ApplicationController
     {name: params[:name], img_url: params[:img_url], factual_id: params[:factual_id], count: params[:count], exp_date: params[:exp_date], user_id: params[:user_id]}
   end
 
+  def is_favorite
+    {is_favorite: params['true']}
+  end
 
   def is_favorite
     {is_favorite: params['true']}

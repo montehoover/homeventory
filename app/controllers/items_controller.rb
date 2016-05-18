@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
     puts @current_user.id
   	@items = Item.where({user_id: @current_user.id})
   end
+  
   def show
     @item = Item.find params[:id]
   end
@@ -11,7 +12,7 @@ class ItemsController < ApplicationController
   	@item = Item.new
   end
 
-   def update
+  def update
     puts params
     item = Item.find params[:id]
     item.update is_favorite
