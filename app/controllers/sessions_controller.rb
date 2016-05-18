@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       flash[:success] = "User logged in!"
       puts "User logged in"
-      redirect_to root_path
+      redirect_to items_path
     else
       flash[:danger] = "Credentials Invalid."
       redirect_to login_path
