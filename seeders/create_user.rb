@@ -1,29 +1,58 @@
 # Run this file using the following command from the command line:
 # bundle exec rails runner "eval(File.read 'seeders/create_user.rb')"
 
-
+puts
 puts "Deleting previous data for homeventory..."
 puts
 
-for item in Item.all
-  item.destroy
+begin
+  for item in Item.all
+    item.destroy
+  end
+  puts "Deleted previous Items."
+rescue Exception => e
+  puts e.message
+  puts "There was some trouble deleting from Item table.  Does Item exist in database?"
 end
 
-for category in Category.all
-  category.destroy
+begin
+  for category in Category.all
+    category.destroy
+  end
+  puts "Deleted previous Categories."
+rescue Exception => e
+  puts e.message
+  puts "There was some trouble deleting from Category table.  Does Category exist in database?"
 end
 
-for fav in Favorite.all
-  fav.destroy
+begin
+  for fav in Favorite.all
+    fav.destroy
+  end
+  puts "Deleted previous Favorites."
+rescue Exception => e
+  puts e.message
+  puts "There was some trouble deleting from Favorite table.  Does Favorite exist in database?"
 end
 
-for user in User.all
-  user.destroy
+begin
+  for user in User.all
+    user.destroy
+  end
+  puts "Deleted previous Users."
+rescue Exception => e
+  puts e.message
+  puts "There was some trouble deleting from User table.  Does User exist in database?"
 end
 
 
+#####################################################
+#####################################################
 
+
+puts
 puts "Creating database test data for homeventory..."
+puts
 
 puts "Creating test User..."
 User.create(name: 'Ms. Test', email: 'test@test.com', password: 'test1234' )
