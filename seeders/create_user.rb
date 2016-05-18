@@ -2,7 +2,8 @@
 # bundle exec rails runner "eval(File.read 'seeders/create_user.rb')"
 
 
-puts "Deleting previous data for homeventory...\n"
+puts "Deleting previous data for homeventory..."
+puts
 
 for item in Item.all
   item.destroy
@@ -22,11 +23,11 @@ end
 
 
 
-puts "Creating database test data for homeventory...\n"
+puts "Creating database test data for homeventory..."
 
 puts "Creating test User..."
 User.create(name: 'Ms. Test', email: 'test@test.com', password: 'test1234' )
-puts "Created User: '#{User.first.name}'.  There are #{User.all.length} Users total.\n"
+puts "Created User: '#{User.first.name}'.  There are #{User.all.length} Users total."
 
 
 puts "Creating test Categories..."
@@ -35,7 +36,7 @@ Category.create(name: "Pantry")
 Category.create(name: "Refrigerated")
 Category.create(name: "Frozen")
 Category.create(name: "Toiletry")
-puts "Created Category: '#{Category.first.name}' and #{Category.all.length} others.\n"
+puts "Created Category: '#{Category.first.name}' and #{Category.all.length} others."
 
 puts "Creating test Favorites..."
 User.first.favorite.create(name: "bananas")
@@ -48,7 +49,7 @@ User.first.favorite.create(name: "mustard")
 User.first.favorite.create(name: "vodka")
 User.first.favorite.create(name: "dish soap")
 User.first.favorite.create(name: "toilet paper")
-puts "Created Favorite: '#{Favorite.first.name}' and #{Favorite.all.length} others.\n"
+puts "Created Favorite: '#{Favorite.first.name}' and #{Favorite.all.length} others."
 
 
 puts "Creating test Items..."
