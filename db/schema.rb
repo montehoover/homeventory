@@ -62,7 +62,6 @@ ActiveRecord::Schema.define(version: 20160518002224) do
     t.float    "amount_left"
     t.string   "img_url"
     t.integer  "default_id"
-    t.integer  "favorite_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.integer  "user_id"
@@ -72,7 +71,6 @@ ActiveRecord::Schema.define(version: 20160518002224) do
   end
 
   add_index "items", ["default_id"], name: "index_items_on_default_id", using: :btree
-  add_index "items", ["favorite_id"], name: "index_items_on_favorite_id", using: :btree
   add_index "items", ["user_id"], name: "index_items_on_user_id", using: :btree
 
   create_table "list_items", force: :cascade do |t|
@@ -105,6 +103,5 @@ ActiveRecord::Schema.define(version: 20160518002224) do
   add_foreign_key "categories_items", "items"
   add_foreign_key "favorites", "users"
   add_foreign_key "items", "defaults"
-  add_foreign_key "items", "favorites"
   add_foreign_key "items", "users"
 end
