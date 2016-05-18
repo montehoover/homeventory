@@ -1,9 +1,6 @@
-
-
-
 class ListsController < ApplicationController
   def index
-  	@list = List_Item.all
+  	@list = ListItem.all
   end
 
 
@@ -13,5 +10,7 @@ class ListsController < ApplicationController
     list_item = ListItem.create(name: params[:name])
 
     puts "list item:", list_item
+    redirect_to lists_path
   end
+  
 end
