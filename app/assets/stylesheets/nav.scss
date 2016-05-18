@@ -1,8 +1,8 @@
 
-$bgDefault      : #441744;
-$bgHighlight    : #811149;
-$colDefault     : #ecf0f1;
-$colHighlight   : #ecf0f1;
+$bgDefault      : #fea610;
+$bgHighlight    : #f96523;
+$colDefault     : white;
+$colHighlight   : #f96523;
 $dropDown       : false;
 .navbar-default {
   background-color: $bgDefault;
@@ -69,8 +69,8 @@ $dropDown       : false;
 }
 
 #navBrand {
-  font-family: 'Lobster', cursive;
-  font-size: 200%;
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 35px;
 }
 
 .user-logged-in-mobile{
