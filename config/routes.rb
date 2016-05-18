@@ -1,29 +1,16 @@
 Rails.application.routes.draw do
 
   get 'results/' => 'results#index'
-
   get 'results/show' => 'results#show'
-
   post 'results/show' => 'results#create'
 
   get 'search' => 'factual#index'
 
   get 'factual/show' => 'factual#show'
-
   post 'factual/create' => 'factual#create'
 
 
-
-
-  #users 
-  # make 'login' root
- 
-
-
-
-  # change to 'signup'
   post 'signup' => 'users#create'
-  # duplicate (can be deleted)
   get 'signup' => 'users#new'
   
   ##password controller routes
@@ -32,17 +19,8 @@ Rails.application.routes.draw do
   get 'reset/:code' => 'passwords#edit', as: :reset_code
   put 'reset/:code' => 'passwords#update'
 
-
-
  #main
   get 'restricted' => 'main#restricted'
-
-  
-
-  # get 'signup' => 'users#new'
-
-  
-
 
   #sessions
 
@@ -56,8 +34,11 @@ Rails.application.routes.draw do
   get 'auth/:provider/callback' => 'auth#callback'
 
   get 'items' => 'items#index'
+  put 'items/:id/reset' => 'items#reset_count'
   get 'items/:id' => 'items#show'
+  
   delete 'items/:id' => 'items#destroy'
+
 
   #favorites
   get 'favorites' => 'favorites#index'

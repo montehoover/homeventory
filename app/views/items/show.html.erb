@@ -8,7 +8,8 @@
 						<h1 class="show-item-name"><%= @item.name %></h1>
 		    		<p class="quan">Quantity left: <%= @item.count %></p>
 		    		<div class="show-buttons">
-		    			<button class="btn btn-default" id="out-of-this" type="submit">I'm out of this!</button>
+		    			<!-- <button class="btn btn-default" id="out-of-this" type="submit">I'm out of this!</button> -->
+		    			<%= link_to "I'm out of this!", "#{@item.id}/reset", method: :put, class: "btn btn-default" %>
 			    		<%= link_to "Delete", item_path(@item), method: :delete, class: "btn btn-default" %>
 			    	</div>
 		  	</div>
