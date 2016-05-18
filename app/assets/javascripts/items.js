@@ -18,7 +18,6 @@ $(document).ready(function() {
           name: "$('#itemName').text();"
         }
       }).done(function(data){
-
         if(data){
           ('#itemName').text();
         }
