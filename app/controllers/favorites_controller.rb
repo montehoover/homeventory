@@ -25,4 +25,5 @@ class FavoritesController < ApplicationController
 
   def is_favorite
     {is_favorite: params['true']}
+  end
 end
