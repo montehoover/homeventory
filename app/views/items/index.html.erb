@@ -6,30 +6,7 @@
 		<% if @items.length > 0 %>
 		<% @items.each do |item| %>
 			<div class="panel panel-default">
-<<<<<<< HEAD
-	  		<div class="panel-body">
-	    		<img src="<%= item.img_url %>">
-	    		<a id="itemName" href="items/<%= item.id %>"><%= item.name %></a>
-		    	
 
-
-          <!-- Adjust font color based upon the quantity of count -->
-		      <% if item.count < 2.0 %>
-		        <p style="color: red;"><%= item.count %></p>
-		        <% else %>
-		        <p style="color: green;"><%= item.count %></p>
-		        <% end %>
-
-
-		        <button class="btn btn-default" id="add-to-list" type="submit">Add To List</button>
-
-		    	<%= link_to "Add to Favorites", item_path(item), method: :put, class: "btn btn-default" %>
-
-
-		    	<%= link_to "Delete", item_path(item), method: :delete, class: "btn btn-default" %>
-		   
-
-=======
 	  		<div class="panel-body inv-name">
 	  			<div class="item-img">
 	    			<img class="item-thumb" src="<%= item.img_url %>" width="150">
@@ -41,7 +18,6 @@
 			    	<button class="btn btn-default" id="add-to-list" type="submit">+ List</button>
 			    	<%= link_to "+ Favorites", item_path(item), method: :put, class: "btn btn-default" %>
 			    	</div>
->>>>>>> a3ccd5bf9a53d437ab6edd362de7cbc1d9534a6c
 		  	</div>
 			</div>
 		<% end %>

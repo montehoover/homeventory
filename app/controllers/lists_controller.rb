@@ -1,4 +1,4 @@
-require 'pry'
+
 
 
 class ListsController < ApplicationController
@@ -11,7 +11,7 @@ class ListsController < ApplicationController
     puts "create method reached"
    
     list_item = ListItem.create(name: params[:name])
-    binding.pry
+
     puts "list item:", list_item
   end
 end
