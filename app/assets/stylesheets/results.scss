@@ -47,32 +47,43 @@
 }*/
 
 
+	li {
+	list-style: none;
 
-li {
-  list-style: none;
+		a {
 
-  a {
+		color: white;
+		font-size: 18px;
+		text-decoration: none;
+		font-weight: bold;
 
-  color: white;
-  font-size: 18px;
-  text-decoration: none;
-  font-weight: bold;
+		:hover {
+		color: white;
+		text-decoration: underline;
+		font-weight: bold;
+		}
 
-  :hover {
-  color: white;
-  text-decoration: underline;
-  font-weight: bold;
-  }
+		}
+	}
 
-  }
 
-}
 
 .results-list {
 	text-align: center;
+	font-family: 'Roboto Slab', serif;
 }
 
 .factual {
 	text-align: center;
+}
+
+.results {
+	text-align: center;
+}
+
+@media (max-width: 400px) {
+	.result-name {
+		font-size: 20px
+	}
 }
 

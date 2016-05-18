@@ -1,11 +1,26 @@
-<h1>Login</h1>
+<div class="container">
+	<div class="col-xs-12">
+		<h1>Login</h1>
+			
+				<%= form_for :user do |f|  %>
+				<div class="email">
+				<%= f.text_field :email, placeholder: "Enter your email", class: "email-field" %>
+				</div>
+				<div class="password">
+				<%= f.password_field :password, placeholder: "Enter your password", class: "pword-field" %>
+				</div>
+				<div class="login">
+				<%= f.submit "Login", class: "btn btn-primary login-btn" %>
+				</div>
+				<% end %>
 
-<%= link_to "Login with Facebook", "/auth/facebook", class: "btn btn-primary" %>
-
-<%= form_for :user do |f|  %>
-<%= f.text_field :email, placeholder: "Enter your email" %>
-<%= f.password_field :password, placeholder: "Enter your password" %>
-<%= f.submit "Login" %>
-<% end %>
-<br>
-<a style="color:black;text-decoration: none;" href="/signup">Sign up for a new account here</a>
+			<div class="facebook">
+				<%= link_to "Login with Facebook", "/auth/facebook", class: "btn btn-primary fb-btn" %>
+			</div>
+			
+		<br>
+			<p class="sign-up">
+				Sign up for a new account <a style="color:black;text-decoration: none;" href="/signup">here</a>.
+			</p>
+	</div>
+</div>

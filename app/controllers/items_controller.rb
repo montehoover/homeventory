@@ -16,7 +16,7 @@ class ItemsController < ApplicationController
     puts params
     item = Item.find params[:id]
     item.update is_favorite
-      redirect_to factual_path
+      redirect_to items_path
   end
 
 
@@ -27,6 +27,10 @@ class ItemsController < ApplicationController
   end
 
   def is_favorite
-  {is_favorite: true}
+    {is_favorite: true}
+  end
+
+  def not_favorite
+    {is_favorite: false}
   end
 end
