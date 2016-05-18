@@ -1,6 +1,8 @@
 <div class="container">
 	<div class="col-xs-12">
-		<h1>Inventory</h1>
+		<div><span class="inventory-header">Inventory</span><a href="/search" class="btn btn-sq-xs btn-success">
+              <i class="glyphicon glyphicon-plus"></i> Add Item to Inventory</a></div>
+		<% if @items.length > 0 %>
 		<% @items.each do |item| %>
 			<div class="panel panel-default">
 	  		<div class="panel-body inv-name">
@@ -15,6 +17,13 @@
 			    	<%= link_to "+ Favorites", item_path(item), method: :put, class: "btn btn-default" %>
 			    	</div>
 		  	</div>
+			</div>
+		<% end %>
+		<% else %>
+			<div class="panel panel-default">
+	  		<div class="panel-body">
+	  		<h3 style="color: black;">Your inventory is currently empty.</h3>
+	  		</div>
 			</div>
 		<% end %>
 	</div>
