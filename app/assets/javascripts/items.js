@@ -1,16 +1,28 @@
 $(document).ready(function() {
     console.log( "ready!" );
-    $('#delete-item').on('click',function(e){
+    $('#inventory').on('click', ('#add-to-list'),function(e){
+      console.log("clicked")
       e.preventDefault();
       var btn=$(this);
+      console.log(btn)
+
+
+
+
+
+
       $.ajax({
-        url:  btn.attr('href'),
-        method:'DELETE',
-        dataType:'json'
+        url:  '/lists',
+        method:'POST',
+        data: {
+          name: "$('#itemName').text();"
+        }
       }).done(function(data){
+
         if(data){
-          btn.closest('item').remove();
+          ('#itemName').text();
         }
       })
     });
 });
+

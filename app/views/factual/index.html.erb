@@ -9,7 +9,7 @@
           <% end %>
 
           
-<form action="<%= results_path %>" method="get">
+<form style= "color: black;" action="<%= results_path %>" method="get">
   <%= text_field_tag :q, params[:q] %>
   <%= submit_tag "search", :name => nil %>
 </form>

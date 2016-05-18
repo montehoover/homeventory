@@ -1,4 +1,5 @@
-<div class="container">
+
+<div class="container" id="inventory">
 	<div class="col-xs-12">
 		<h1>Inventory</h1>
 		<% if @items.length > 0 %>
@@ -7,19 +8,23 @@
 			<div class="panel panel-default">
 	  		<div class="panel-body">
 	    		<img src="<%= item.img_url %>">
-	    		<a href="items/<%= item.id %>"><%= item.name %></a>
-		    	<button class="btn btn-default" id="add-to-list" type="submit">Add To List</button>
+	    		<a id="itemName" href="items/<%= item.id %>"><%= item.name %></a>
+		    	
 
 
-          <!-- Adjust font color based upon the quantity of amount_left -->
-		      <% if item.amount_left < 2.0 %>
-		        <p style="color: red;"><%= item.amount_left %></p>
+          <!-- Adjust font color based upon the quantity of count -->
+		      <% if item.count < 2.0 %>
+		        <p style="color: red;"><%= item.count %></p>
 		        <% else %>
-		        <p style="color: green;"><%= item.amount_left %></p>
+		        <p style="color: green;"><%= item.count %></p>
 		        <% end %>
 
 
+		        <button class="btn btn-default" id="add-to-list" type="submit">Add To List</button>
+
 		    	<%= link_to "Add to Favorites", item_path(item), method: :put, class: "btn btn-default" %>
+
+
 		    	<%= link_to "Delete", item_path(item), method: :delete, class: "btn btn-default" %>
 		   
 
