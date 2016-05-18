@@ -14,6 +14,10 @@ class ItemsController < ApplicationController
 
   # Sets is_favorite of the item to true, thus adding it to the favorites list
   def update
+    puts params
+    item = Item.find params[:id]
+    item.update is_favorite
+      redirect_to items_path
     Item.find(params[:id]).update(is_favorite: true)
     redirect_to factual_path
   end
@@ -29,4 +33,11 @@ class ItemsController < ApplicationController
     redirect_to items_path
   end
 
+  def is_favorite
+    {is_favorite: true}
+  end
+
+  def not_favorite
+    {is_favorite: false}
+  end
 end

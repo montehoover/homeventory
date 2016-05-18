@@ -1,17 +1,17 @@
 <div class="container">
   <div class="col-xs-12">
     <h1 class="factual">Factual Results</h1>
-      <ul class="results-list">
-        <% @results.each do |result| %>
-            <% puts result %>
-            <% @name = result['product_name'] %>
-            <% @url = result["image_urls"] %>
-            <% @category = result["category"] %>
-          <li> 
-            <%= link_to truncate(result['product_name'], length: 35, separator: ' '), results_show_path(:id => result['factual_id']) %>
-          </li>
-        <% end %>
-      </ul>
+        <ul class="results-list">
+          <% @results.each do |result| %>
+              <% puts result %>
+              <% @name = result['product_name'] %>
+              <% @url = result["image_urls"] %>
+              <% @category = result["category"] %>
+            <li> 
+              <%= link_to truncate(result['product_name'], length: 35, separator: ' '), results_show_path(:id => result['factual_id']) %>
+            </li>
+          <% end %>
+        </ul>
   </div>
 </div>
 
