@@ -1,6 +1,7 @@
 <div class="container">
 	<div class="col-xs-12">
 		<h1>Inventory</h1>
+		<% if @items.length > 0 %>
 		<% @items.each do |item| %>
 	
 			<div class="panel panel-default">
@@ -12,6 +13,13 @@
 		    	<%= link_to "Delete", item_path(item), method: :delete, class: "btn btn-default" %>
 		   
 		  	</div>
+			</div>
+		<% end %>
+		<% else %>
+			<div class="panel panel-default">
+	  		<div class="panel-body">
+	  		<h3 style="color: black;">Your inventory is currently empty.</h3>
+	  		</div>
 			</div>
 		<% end %>
 	</div>
