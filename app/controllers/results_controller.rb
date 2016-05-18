@@ -29,7 +29,7 @@ class ResultsController < ApplicationController
     else
       item = Item.create new_item_params
     end
-    redirect_to factual_path
+    redirect_to items_path
     
   end
   

@@ -1,6 +1,7 @@
 <div class="container">
 	<div class="col-xs-12">
-		<h1>Inventory</h1>
+		<div><span class="inventory-header">Inventory</span><a href="/search" class="btn btn-sq-xs btn-success">
+              <i class="glyphicon glyphicon-plus"></i> Add Item to Inventory</a></div>
 		<% if @items.length > 0 %>
 		<% @items.each do |item| %>
 			<div class="panel panel-default">

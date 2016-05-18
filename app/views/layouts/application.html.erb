@@ -29,7 +29,6 @@
       </button>
 
       <a class="navbar-brand" href="/" id= "navBrand">Homeventory</a>
-
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -41,6 +40,7 @@
         <li><a class="nav-item" href="/favorites">Favorites</a></li>
         <li><a class="nav-item" href="/list">List</a></li>
         <li><a class="nav-item" href="/logout">Logout</a></li>
+
         <% if @current_user %>
             <li><span class="user-logged-in"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <%= @current_user.email %></span>  </li>
             <% end %>
