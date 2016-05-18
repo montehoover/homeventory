@@ -7,11 +7,6 @@ class FavoritesController < ApplicationController
   	@favorite = Favorite.new
   end
 
-  def update
-    item = Item.find params[:id]
-    item.update is_favorite
-      redirect_to factual_path
-  end
 
 
   def destroy
@@ -26,4 +21,5 @@ class FavoritesController < ApplicationController
   def is_favorite
     {is_favorite: params['true']}
   end
+
 end
