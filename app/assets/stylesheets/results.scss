@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 .results {
@@ -40,3 +41,29 @@
 	display: block;
 	color: black;
 }
+=======
+// Place all the styles related to the results controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+li {
+  list-style: none;
+
+  a {
+
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: bold;
+
+  :hover {
+  color: white;
+  text-decoration: underline;
+  font-weight: bold;
+  }
+
+  }
+
+}
+>>>>>>> 067c55317d5592f6a72c2001852658408ecc332e
