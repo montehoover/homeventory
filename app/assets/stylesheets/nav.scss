@@ -72,3 +72,29 @@ $dropDown       : false;
   font-family: 'Lobster', cursive;
   font-size: 200%;
 }
+
+.user-logged-in-mobile{
+  font-size: 10px;
+  margin-left: 10px;
+  color:white; 
+  line-height: 50px;
+}
+
+.user-logged-in{
+  font-size: 10px;
+  margin-left: 10px;
+  color:white; 
+  line-height: 50px;
+}
+
+@media (max-width: 691px) {
+  .user-logged-in {
+    display: none;
+  }
+}
+
+@media (min-width: 692px) {
+  .user-logged-in-mobile {
+    display: none;
+  }
+}
