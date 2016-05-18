@@ -34,15 +34,9 @@ Rails.application.routes.draw do
 
 
 
- #main
+  #main
+  
   get 'restricted' => 'main#restricted'
-
-  
-
-  # get 'signup' => 'users#new'
-
-  
-
 
   #sessions
 
