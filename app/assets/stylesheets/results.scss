@@ -47,13 +47,14 @@
 }*/
 
 
+$bgDefault      : #441744;
 
 li {
   list-style: none;
 
   a {
 
-  color: white;
+  color: $bgDefault;
   font-size: 18px;
   text-decoration: none;
   font-weight: bold;

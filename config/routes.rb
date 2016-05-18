@@ -19,7 +19,8 @@ Rails.application.routes.draw do
   get 'reset/:code' => 'passwords#edit', as: :reset_code
   put 'reset/:code' => 'passwords#update'
 
- #main
+
+  #main
   get 'restricted' => 'main#restricted'
 
   #sessions

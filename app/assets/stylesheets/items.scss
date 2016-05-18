@@ -1,22 +1,22 @@
-/*/////Item Index Page/////*/
 
-/*.inv-img {
+
+.inv-img {
 	text-align: center;
-}*/
+}
 
 .inv-name {
-/*	float: right;*/
+  float: right;
 	display: block;
 	vertical-align: top;
 	font-size: 20px;
 	font-family: 'Noticia Text', serif;
 	text-align: center;
-/*	border: 1px solid black;*/
+  border: 1px solid black;
 }
 
 .inv-buttons {
 	text-align: center;
-	/*display: inline-block;*/
+	display: inline-block;
 }
 
 .item-img {
@@ -28,7 +28,9 @@
 	margin-bottom: 15px;
 }
 
-/*/////Item Show Page/////*/
+
+
+
 
 .show-item-name {
 	color: black;
@@ -72,7 +74,7 @@
 
 @media (min-width: 401px) and (max-width: 600px) {
 	img {
-		/*max-height: 100px;*/
+		max-height: 100px;
 	}
 }
 

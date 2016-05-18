@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+gem 'pry', :group => :development
 gem 'json'
 
 gem 'omniauth'

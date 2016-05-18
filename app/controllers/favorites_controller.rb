@@ -11,7 +11,8 @@ class FavoritesController < ApplicationController
 
 
   def destroy
-    Favorite.find(params[:id]).delete
+    deleted_item = Favorite.find(params[:id]).delete
+    flash[:danger] = "The #{deleted_item.name} item has been deleted."
     redirect_to favorites_path
   end
 
@@ -22,5 +23,11 @@ class FavoritesController < ApplicationController
   def is_favorite
     {is_favorite: params['true']}
   end
+
+  def is_favorite
+    {is_favorite: params['true']}
+  end
+
+
 
 end
