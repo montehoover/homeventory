@@ -3,13 +3,13 @@
 		<div class="panel panel-default">
 	  	<div class="panel-body">
 		  		<div class="show-img">
-		  			<img src="<%= @item.img_url %>">
+		  			<img src="<%= @item.img_url %>" width="150">
 		  		</div>
 						<h1 class="show-item-name"><%= @item.name %></h1>
 		    		<p class="quan">Quantity left: <%= @item.count %></p>
 		    		<div class="show-buttons">
 		    			<button class="btn btn-default" id="out-of-this" type="submit">I'm out of this!</button>
-			    		<button class="btn btn-default" id="add-to-faves" type="submit">Add To Favorites</button>
+			    		<%= link_to "Delete", item_path(@item), method: :delete, class: "btn btn-default" %>
 			    	</div>
 		  	</div>
 			</div>

@@ -2,32 +2,18 @@
 	<div class="col-xs-12">
 		<h1>Inventory</h1>
 		<% @items.each do |item| %>
-<<<<<<< HEAD
-			<div class="panel panel-default inv-panel">
-	  		<div class="panel-body">
-		  			<div class="inv-img">
-		    			<img src="<%= item.img_url %>">
-		    		</div>
-		    		<div class="inv-name">
-		    			<a href="items/<%= item.id %>"><%= item.name %></a>
-		    		</div>
-		    		<div class="inv-buttons">
-			    		<button class="btn btn-default add-to-list" type="submit">Add To List</button>
-			    	<!-- <button class="btn btn-default" id="delete-item" type="submit">Delete</button> -->
-					    	<%= link_to "Delete", item_path(item), method: :delete, class: "btn btn-default delete-item" %>
-					    	<!-- item_path(item) translates to "/items/:id" -->
-				    </div>
-=======
-	
 			<div class="panel panel-default">
-	  		<div class="panel-body">
-	    		<img src="<%= item.img_url %>">
+	  		<div class="panel-body inv-name">
+	  			<div class="item-img">
+	    			<img class="item-thumb" src="<%= item.img_url %>" width="150">
+	    		</div>
+	    		<div class="item-name">
 	    		<a href="items/<%= item.id %>"><%= item.name %></a>
-		    	<button class="btn btn-default" id="add-to-list" type="submit">Add To List</button>
-		    	<%= link_to "Add to Favorites", item_path(item), method: :put, class: "btn btn-default" %>
-		    	<%= link_to "Delete", item_path(item), method: :delete, class: "btn btn-default" %>
-		   
->>>>>>> 5aaba8d6f20a76b080da775e309b9336264a45ca
+	    		</div>
+		    		<div class="inv-buttons">
+			    	<button class="btn btn-default" id="add-to-list" type="submit">+ List</button>
+			    	<%= link_to "+ Favorites", item_path(item), method: :put, class: "btn btn-default" %>
+			    	</div>
 		  	</div>
 			</div>
 		<% end %>

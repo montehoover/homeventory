@@ -1,20 +1,31 @@
 /*/////Item Index Page/////*/
 
-.inv-img {
+/*.inv-img {
 	text-align: center;
-}
+}*/
 
 .inv-name {
+/*	float: right;*/
 	display: block;
 	vertical-align: top;
-	font-size: 30px;
-	font-family: 'Noticia Text', serif;;
+	font-size: 20px;
+	font-family: 'Noticia Text', serif;
 	text-align: center;
 /*	border: 1px solid black;*/
 }
 
 .inv-buttons {
 	text-align: center;
+	/*display: inline-block;*/
+}
+
+.item-img {
+	float: left;
+}
+
+.item-name {
+	margin-top: 10px;
+	margin-bottom: 15px;
 }
 
 /*/////Item Show Page/////*/
@@ -22,6 +33,8 @@
 .show-item-name {
 	color: black;
 	text-align: center;
+	font-family: 'Noticia Text', serif;
+	font-size: 20px;
 }
 
 .quan {
@@ -37,3 +50,28 @@
 	text-align: center;
 }
 
+
+
+@media (max-width: 400px) {
+	.item-thumb {
+		width: 75px;
+	}
+	.item-img {
+		float: left;
+		/*display: block;*/
+		/*text-align: center;*/
+	}
+	.inv-name {
+		font-size: 15px;
+	}
+	.inv-buttons {
+		float: right;
+		margin-right: 10px;
+	}
+}
+
+@media (min-width: 401px) and (max-width: 600px) {
+	img {
+		/*max-height: 100px;*/
+	}
+}
