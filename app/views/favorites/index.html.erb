@@ -3,12 +3,13 @@
 		<% @favorite.each do |favorite| %>
 			<div class="panel panel-default">
 	  		<div class="panel-body">
-	    		<%= favorite.name %>
+	    		<h5><%= favorite.name %></h5>
+
 		    	<button class="btn btn-default pull-right" id="add-to-inv" type="submit">Add To Inventory</button>
 	  	  	
-	  	  	<%= link_to "Delete", favorite_path(favorite), method: :delete, class: "btn btn-default pull-right", id: "delete-btn" %>
+	  	  <!-- 	link_to "Delete", favorite_path(favorite), method: :delete, class: "btn btn-default", id: "delete-btn"  -->
 	  		</div>
 			</div>
-	 <% end %>
+	  <% end %>
 </div>
 

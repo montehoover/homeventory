@@ -16,9 +16,16 @@
 		    	<!-- delete btn works! -->
 		    	<%= link_to "Delete", item_path(item), method: :delete, class: "btn btn-danger" %>
 		    	<!-- item_path(item) translates to "/items/:id" -->
+
+          <!-- Adjust font color based upon the quantity of amount_left -->
+		      <% if item.amount_left < 2.0 %>
+		        <p style="color: red;"><%= item.amount_left %></p>
+		        <% else %>
+		        <p style="color: green;"><%= item.amount_left %></p>
+		        <% end %>
+
 		  	</div>
 			</div>
 		<% end %>
 	</div>
 </div>
-
