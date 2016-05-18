@@ -17,7 +17,7 @@
 		    		<div class="inv-buttons">
 			    	<%= form_tag("/lists", method: "post") do %>
             <%= hidden_field_tag(:name, item.name) %>
-            <%= submit_tag("+ List") %>
+            <%= submit_tag("+ List", class: "btn btn-default") %>
             <% end %>
 			    	<%= link_to "+ Favorites", item_path(item), method: :put, class: "btn btn-default" %>
 			    	</div>
