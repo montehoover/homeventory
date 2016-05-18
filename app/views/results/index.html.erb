@@ -1,4 +1,4 @@
-<h1>Factual Results</h1>
+<h1 style="text-align: center">Factual Results</h1>
  
         <ul>
         <% @results.each do |result| %>
@@ -8,8 +8,8 @@
         <% @category = result["category"] %>
 
           <li> 
-<!--           <a href="results/show/?id=<%= result['factual_id'] %>"><%= result['product_name']%></a>
- -->          <%= link_to result['product_name'], results_show_path(:id => result['factual_id']) %>
+
+<%= link_to truncate(result['product_name'], length: 35, separator: ' '), results_show_path(:id => result['factual_id']) %>
           </li>
       <% end %>
       </ul>

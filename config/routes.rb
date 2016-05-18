@@ -60,12 +60,14 @@ Rails.application.routes.draw do
 
   #favorites
   get 'favorites' => 'favorites#index'
+  post 'favorites' => 'favorites#create'
+  delete 'favorites/:id' => 'favorites#destroy'
+
 
   get 'lists' => 'lists#index'
 
 
   resources :items
-  resources :favorites
   resources :lists
 
   # The priority is based upon order of creation: first created -> highest priority.
