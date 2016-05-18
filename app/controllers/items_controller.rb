@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   def index
   	@items = Item.all
   end
+  
   def show
     @item = Item.find params[:id]
   end
@@ -10,7 +11,7 @@ class ItemsController < ApplicationController
   	@item = Item.new
   end
 
-   def update
+  def update
     puts params
     item = Item.find params[:id]
     item.update is_favorite

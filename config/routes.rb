@@ -56,7 +56,8 @@ Rails.application.routes.draw do
   get 'auth/:provider/callback' => 'auth#callback'
 
   get 'items' => 'items#index'
-  delete 'item/:id' => 'items#destroy'
+  get 'items/:id' => 'items#show'
+  delete 'items/:id' => 'items#destroy'
 
   #favorites
   get 'favorites' => 'favorites#index'

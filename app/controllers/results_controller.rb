@@ -4,6 +4,7 @@ class ResultsController < ApplicationController
     @item = Item.new
     factual = Factual.new("EQaaFMK4DkRvfGT5GyYTEaCaUJ9Xzcfn9BALb0AA", "0bpbMmOJlirClLtE9aEpXgtUZfrhmePb4ucTAA5t")
     @results = factual.table("products-cpg").search(params[:q]).rows
+    # @result = factual.table("products-cpg").search(params[:q]).rows
     puts @results
   end
 
