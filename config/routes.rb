@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   post 'results/show' => 'results#create'
 
-  get 'factual/' => 'factual#index'
+  get 'search' => 'factual#index'
 
   get 'factual/show' => 'factual#show'
 
@@ -17,12 +17,12 @@ Rails.application.routes.draw do
 
   #users 
   # make 'login' root
-  root 'users#new'
+ 
 
 
-  get 'users/create'
+
   # change to 'signup'
-  post '/' => 'users#create'
+  post 'signup' => 'users#create'
   # duplicate (can be deleted)
   get 'signup' => 'users#new'
   
@@ -40,8 +40,8 @@ Rails.application.routes.draw do
 
   #sessions
 
-  get "login" => "sessions#new"
-  post "login" => "sessions#create"
+  root "sessions#new"
+  post "/" => "sessions#create"
   get 'logout' => 'sessions#destroy'
 
   #auth

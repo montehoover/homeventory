@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     user = User.create user_params
     session[:user_id] = user.id
     flash[:success] = "You successfully created an account."
-    redirect_to factual_show_path
+    redirect_to items_path
   end
 
   
