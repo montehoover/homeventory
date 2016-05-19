@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   put 'items/:id/islist' => 'items#add_to_list'
 
   put 'items/:id/notlist' => 'items#remove_from_list'
+
+  put 'items/clearlist' => 'items#clear_shopping_list'
   
   resources :items
   resources :lists

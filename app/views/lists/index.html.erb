@@ -1,6 +1,7 @@
 <div class="container">
 	<div class="col-xs-12">
 		<h1>Shopping List</h1>
+		<%= link_to "Clear Shopping List", "/items/clearlist", method: :put, class: "btn btn-default" %>
 			<% if @list.length > 0 %>
 			<% @list.each do |item| %>
 					<div class="list">
