@@ -1,4 +1,5 @@
 class FavoritesController < ApplicationController
+    before_action :is_authenticated?
   def index
   	@favorite = Item.all.where({user_id: @current_user.id, is_favorite: true})
 
