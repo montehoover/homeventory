@@ -1,6 +1,7 @@
 class FavoritesController < ApplicationController
   def index
-  	@favorite = Item.all.where(is_favorite: true)
+    puts "current user", current_user.id
+  	@favorite = Item.all.where({user_id: @current_user.id, is_favorite: true})
 
   end
 

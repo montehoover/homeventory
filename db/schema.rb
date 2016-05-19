@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160518002224) do
+ActiveRecord::Schema.define(version: 20160518204604) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -97,6 +97,9 @@ ActiveRecord::Schema.define(version: 20160518002224) do
     t.string   "name"
     t.string   "reset_code"
     t.datetime "expires_at"
+    t.string   "provider_id"
+    t.string   "provider_hash"
+    t.string   "provider"
   end
 
   add_foreign_key "categories_items", "categories"

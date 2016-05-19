@@ -1,6 +1,6 @@
 class ListsController < ApplicationController
   def index
-  	@list = ListItem.all
+  	@list = ListItem.where({user_id: @current_user.id})
   end
 
 
