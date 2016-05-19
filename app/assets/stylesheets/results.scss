@@ -1,24 +1,88 @@
-// Place all the styles related to the results controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+.results {
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.result-img {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.result-name {
+	margin-bottom: 25px;
+	font-size: 30px;
+}
+
+.results-info {
+	text-align: center;
+}
+
+.result-name-img {
+	text-align: center;
+}
+
+.count {
+	display: inline-block;
+	margin-bottom: 15px;
+	text-align: center;
+}
+
+.expiration {
+	display: inline-block;
+	margin-bottom: 15px;
+	text-align: center;
+	margin-left: 10px;
+}
+
+.submit-item {
+	display: block;
+	color: black;
+}
+
+/*img .img-result {
+	width: 150px;
+}*/
+
 
 
 li {
-  list-style: none;
+	list-style: none;
 
-  a {
+	a {
+		color: white;
+		font-size: 18px;
+		text-decoration: none;
+		font-weight: bold;
 
-  color: white;
-  font-size: 18px;
-  text-decoration: none;
-  font-weight: bold;
-
-  :hover {
-  color: white;
-  text-decoration: underline;
-  font-weight: bold;
-  }
-
-  }
-
+		:hover {
+			color: white;
+			text-decoration: underline;
+			font-weight: bold;
+		}
+	}
 }
+
+
+
+.results-list {
+	text-align: center;
+	font-family: 'Roboto Slab', serif;
+}
+
+.factual {
+	text-align: center;
+}
+
+.results {
+	text-align: center;
+}
+
+@media (max-width: 400px) {
+	.result-name {
+		font-size: 20px
+	}
+}
+
