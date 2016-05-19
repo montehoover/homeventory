@@ -1,27 +1,28 @@
 <!-- landing page -->
-<section id="row1">
+<section class="row">
 <div class= "col-xs-12">
-  <h1 id = "brand">Welcome</h1>
-  <p>Find me in app/views/users/new.html.erb</p>
+
 </div>
 </section>
 
-<section id="row2">
+<section class="row">
   <div class= "col-xs-12">
-    <h5>Sign Up</h5>
+    <h3 style="text-align: center">Sign Up</h3>
       <%= bootstrap_form_for :user do |f|  %>
-      <%= f.text_field :email, placeholder: "Enter your email" %>
-      <%= f.password_field :password, placeholder: "Create a password" %>
-      <%= f.primary "Signup" %>
+      <%= f.text_field :email, placeholder: "Enter your email", wrapper: { class: 'col-xs-8 col-xs-offset-2'} %>
+      <%= f.password_field :password, placeholder: "Create a password", wrapper: { class: 'col-xs-8 col-xs-offset-2'} %>
+      <%= f.submit "Signup", class: "signup-btn btn-default btn col-xs-6 col-xs-offset-3" %>
       <% end %>
      <% if @current_user %>
             <span style="color:black;"><%= @current_user.email %> is logged in</span>  |  
             <% end %>
-              <% if @current_user %>
-            <a class="nav-links" href="/logout">logout</a>
-            <%else%>
-            <a class="nav-links" href="/login">Already have an account?</a>
-            <% end %>
+
+        
   </div>
+</section>
+<section class="row">
+<div class="col-xs-12">
+<div class="login-div"><a class="link-to-login" href="/">Already have an account?</a></div>
+</div>
 </section>
 
