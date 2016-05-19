@@ -17,10 +17,10 @@ class ItemsController < ApplicationController
     puts params
     item = Item.find params[:id]
     item.update is_favorite
-      redirect_to items_path
-    Item.find(params[:id]).update(is_favorite: true)
-    redirect_to factual_path
+    redirect_to items_path
   end
+
+  def 
 
   def reset_count
     @item = Item.find(params[:id]).update(count: 0)
