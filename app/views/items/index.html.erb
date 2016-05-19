@@ -13,8 +13,8 @@
 	  				<div class="item-img">
 	    				<img class="item-thumb" src="<%= item.img_url %>" width="150">
 	    			</div>
-	    			<div class="item-name">
-	    				<a href="items/<%= item.id %>"><%= item.name %></a>
+	    			<div class="item-name"> 
+	    				<a href="items/<%= item.id %>"><%= "#{item.brand} - #{item.name}"%></a>
 	    			</div>
 		    		<div class="inv-buttons">
 			    		<%= form_tag("/lists", method: "post") do %>
