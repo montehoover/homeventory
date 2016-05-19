@@ -50,12 +50,21 @@ class ItemsController < ApplicationController
 
   def add_to_list
     Item.find(params[:id]).update(is_shopping_list: true)
-    redirect_to lists_path
+    redirect_to items_path
   end
 
   def remove_from_list
     Item.find(params[:id]).update(is_shopping_list: false)
     redirect_to lists_path
+  end
+
+  def clear_shopping_list
+    array = Item.where({user_id: @current_user.id})
+    puts "array is",array
+    for item in array
+      item.update(is_shopping_list: false)
+    end
+      redirect_to lists_path
   end
 
 
