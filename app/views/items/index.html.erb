@@ -15,7 +15,13 @@
 			    			<img class="item-thumb" src="<%= item.img_url %>" width="150">
 			    		</div>
 				    	<div class="item-name">
-				    		<a href="items/<%= item.id %>"><%= item.name %></a>
+				    		<a href="items/<%= item.id %>"><%= "#{item.brand} - #{item.name}" %></a>
+				    		<% if item.count % 1 == 0   %>
+				    			<% qty = item.count.to_i  %>
+				    		<% else  %>
+				    			<% qty = item.count  %>
+				    		<% end  %>
+				    		<p>Quantity: <span class="item-quantity"><%= qty %></span> </p>
 				    	</div>  		
 				    		<%= form_tag("/lists", method: "post") do %>
 	            	<%= hidden_field_tag(:name, item.name) %>

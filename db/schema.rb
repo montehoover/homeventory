@@ -14,7 +14,6 @@
 
 ActiveRecord::Schema.define(version: 20160519183152) do
 
-
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -80,7 +79,10 @@ ActiveRecord::Schema.define(version: 20160519183152) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
+
+  add_index "list_items", ["user_id"], name: "index_list_items_on_user_id", using: :btree
 
   create_table "oauthusers", force: :cascade do |t|
     t.string   "provider"
