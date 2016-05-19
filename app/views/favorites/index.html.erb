@@ -3,6 +3,9 @@
 		<% @favorite.each do |favorite| %>
 			<div class="panel panel-default">
 	  		<div class="panel-body">
+	  		<div class="item-img">
+			    	<img class="item-thumb" src="<%= favorite.img_url %>" width="150">
+			   </div>
 	    		<div class="favorite-name">
 	    			<h5><%= favorite.name %></h5>
 	    		</div>
