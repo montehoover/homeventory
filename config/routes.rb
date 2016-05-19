@@ -1,57 +1,44 @@
 Rails.application.routes.draw do
 
+  #sessions
+  root "sessions#new"
+  post "/" => "sessions#create"
+  get 'logout' => 'sessions#destroy'
+
+  put 'items/:id/reset' => 'items#reset_count'
+  
+  resources :items
+  resources :lists
+  resources :favorites
+
+  # Search Results
   get 'results/' => 'results#index'
   get 'results/show' => 'results#show'
-  post 'results/show' => 'results#create'
+  # post 'results/show' => 'results#create'
 
   get 'search' => 'factual#index'
-
   get 'factual/show' => 'factual#show'
   post 'factual/create' => 'factual#create'
 
-
-  post 'signup' => 'users#create'
+  # User Signup
   get 'signup' => 'users#new'
+  post 'signup' => 'users#create'
   
-  ##password controller routes
+  # Password Controller routes
   get 'reset' => 'passwords#new'
   post 'reset' => 'passwords#create'
   get 'reset/:code' => 'passwords#edit', as: :reset_code
   put 'reset/:code' => 'passwords#update'
 
-
-  #main
+  # Main
   get 'restricted' => 'main#restricted'
 
-  #sessions
-
-  root "sessions#new"
-  post "/" => "sessions#create"
-  get 'logout' => 'sessions#destroy'
-
-  #auth
+  # Auth
   get 'auth/logout' => 'auth#logout'
   get 'auth/failure' => 'auth#failure'
   get 'auth/:provider/callback' => 'auth#callback'
 
-  get 'items' => 'items#index'
-  put 'items/:id/reset' => 'items#reset_count'
-  get 'items/:id' => 'items#show'
-  
-  delete 'items/:id' => 'items#destroy'
 
-
-  #favorites
-  get 'favorites' => 'favorites#index'
-  
-  delete 'favorites/:id' => 'favorites#destroy'
-
-
-  get 'lists' => 'lists#index'
-
-
-  resources :items
-  resources :lists
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

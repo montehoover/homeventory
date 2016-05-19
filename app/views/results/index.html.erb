@@ -7,8 +7,18 @@
               <% @name = result['product_name'] %>
               <% @url = result["image_urls"] %>
               <% @category = result["category"] %>
+
+              <% urls = result['image_urls'] %>
+              <% display_name = "#{result['brand']} #{result['product_name']}" %>
             <li> 
-              <%= link_to truncate(result['product_name'], length: 35, separator: ' '), results_show_path(:id => result['factual_id']) %>
+              <% if urls  %>
+                <img class="img-result" src="<%= urls[0] %>">
+              <% else  %>
+                <img class="img-result" src="PLACEHOLDER FOR NOT FOUND">
+              <% end  %>
+              <%= link_to truncate(display_name, length: 35, separator: ' '), results_show_path(:id => result['factual_id']) %>
+              </br>
+              </br>
             </li>
           <% end %>
         </ul>
