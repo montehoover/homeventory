@@ -15,15 +15,4 @@
 //= require turbolinks
 //= require_tree .
 
-console.log("main loaded")
-document.addEventListener("turbolinks:load", function() {
-  console.log("doc ready")
-  $('.item-quantity').each(function(index, elem) {
-    console.log("each item")
-    if( $(elem).text() == 0){
-      $(elem).parent().parent().parent().parent().css("border", "solid red 6px");
-    } else if ($(elem).text() <= 3){
-      $(elem).parent().parent().parent().parent().css("border", "solid yellow 6px");
-    }
-  });
-});
+
