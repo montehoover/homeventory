@@ -1,5 +1,6 @@
 <div class="container">
 	<h1>Favorites</h1>
+		<% if @favorite.length > 0 %>
 		<% @favorite.each do |favorite| %>
 			<div class="panel panel-default">
 	  		<div class="panel-body">
@@ -11,8 +12,15 @@
 	    		</div>
 	    		<div class="favorite-buttons">
 			    	<button class="btn btn-default" id="add-to-inv" type="submit">Add To Inventory</button>
-		  	  	<button class="btn btn-default" id="delete-from-favs" type="submit">Delete</button>
+		  	  	<%= link_to "Delete", "/items/#{favorite.id}/nofav", method: :put, class: "btn btn-default" %>
 	  	  	</div>
+	  		</div>
+			</div>
+	  <% end %>
+	  <% else %>
+	  	<div class="panel panel-default">
+	  		<div class="panel-body">
+	  		<h3 style="color: black;">Your favorites list is currently empty.</h3>
 	  		</div>
 			</div>
 	  <% end %>
