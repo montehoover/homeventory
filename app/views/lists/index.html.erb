@@ -8,6 +8,7 @@
 			</div>
 		</div>
 			<% if @list.length > 0 %>
+
 			<% @list.each do |item| %>
 			<div class="panel panel-default">
 	  		<div class="panel-body">
@@ -15,7 +16,7 @@
 			    	<img class="item-thumb" src="<%= item.img_url %>" width="150">
 			   </div>
 					<div class="list">
-		    		<span class="list-header"><%= item.name %></span>
+		    		<span class="list-header"><%= "#{item.brand} - #{item.name}" %></span>
 		    		<%= link_to "Delete", "/items/#{item.id}/notlist", method: :put, class: "btn btn-default" %>
 			  	</div>
 			  	  </div>
@@ -29,6 +30,7 @@
 	  		</div>
 			</div>
 		<% end %>
+
 
 </div>
 
