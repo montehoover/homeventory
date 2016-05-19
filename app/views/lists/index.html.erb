@@ -1,20 +1,20 @@
 <div class="container">
 	<div class="col-xs-12">
 		<h1>Shopping List</h1>
+		<%= link_to "Clear Shopping List", "/items/clearlist", method: :put, class: "btn btn-default" %>
 			<% if @list.length > 0 %>
 				<% @list.each do |item| %>
 						<div class="list">
 			    		<%= "#{item.brand} - #{item.name}" %>
+			    		<%= link_to "Delete", "/items/#{item.id}/notlist", method: :put, class: "btn btn-default" %>
 				  	</div>
 				<% end %>
-			<button class="btn btn-default" id="clear-list" type="submit">Clear List</button>
-			<a href="/items"><button class="btn btn-default" id="delete-item" type="submit">Add Items to List</button></a>
-		<% else %>
-			<div class="panel panel-default">
-	  		<div class="panel-body">
-	  		<h3 style="color: black;">Your shopping list is currently empty.</h3>
-	  		</div>
-			</div>
-		<% end %>
+			<% else %>
+				<div class="panel panel-default">
+		  		<div class="panel-body">
+		  		<h3 style="color: black;">Your shopping list is currently empty.</h3>
+		  		</div>
+				</div>
+			<% end %>
 	</div>
 </div>

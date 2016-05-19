@@ -14,8 +14,6 @@ class FactualController < ApplicationController
   end
 
   def create
-    
-
     params = factual_params
     puts params
 
