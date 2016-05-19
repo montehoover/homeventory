@@ -40,7 +40,7 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
   # configuring letter opener.
-  config.action_mailer.delivery_method = :sendmail
+    config.action_mailer.delivery_method = :letter_opener
+  # config.action_mailer.delivery_method = :sendmail
   config.action_mailer.default_url_options = { host: 'http://localhost:3000' }
-  config.action_mailer.default_options = { from: 'management@homeventory' }
 end
