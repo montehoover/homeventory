@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
+  before_action :is_authenticated?
   def index
-    puts @current_user.id
   	@items = Item.where({user_id: @current_user.id})
   end
   def show

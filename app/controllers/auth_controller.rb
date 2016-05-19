@@ -1,27 +1,35 @@
 class AuthController < ApplicationController
-def logout
+
+  def callback
+    # access the provided user info provided by the OAuth provider
+    provider_user = request.env['omniauth.auth']
+
+    # use provided user info to find or create the user in our own database
+    # this populates fields for the user model we created
+    user = User.find_or_create_by(provider_id: provider_user['uid'], provider: params[:provider]) do |u|
+      u.provider_hash = provider_user['credentials']['token']
+      u.name = provider_user['info']['name']
+      u.email = provider_user['info']['email']
+      u.password = SecureRandom.urlsafe_base64
+    end
+
+    # puts "user", user
+    # puts "email", user.email
+    # puts "id", user.id
+    user.save!
+
+    session[:user_id] = user.id
+    redirect_to items_path
+  end
+
+  def logout
     session[:user_id] = nil
     redirect_to root_path
   end
 
   def failure
-    render plain: "Auth failed"
+    #TODO: display error page
+    render plain: "this is a failure"
   end
 
-  def callback
-    #get user info back from the Auth provider
-    provider_user = request.env['omniauth.auth']
-    #save the provided info to our database
-    oauthuser = Oauthuser.find_or_create_by(provider_id: provider_user[:uid],
-      provider: params[:provider]) do |u|
-      u.provider_hash = provider_user['credentials']['token']
-      u.name = provider_user['info']['name']
-      u.email = provider_user['info']['email']
-    end
-    #attach a uer id to a the current session
-    
-    session[:user_id] = oauthuser.id
-    #redirect the user to the homepage
-    redirect_to root_path
-  end
 end
