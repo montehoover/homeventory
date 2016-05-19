@@ -67,9 +67,11 @@
 
   $('.item-quantity').each(function(index, elem) {
     if( $(elem).text() == 0){
-      $(elem).parent().parent().parent().parent().css("border", "solid red 6px");
+      $(elem).parent().parent().parent().parent().addClass("red");
     } else if ($(elem).text() <= 3){
-      $(elem).parent().parent().parent().parent().css("border", "solid yellow 6px");
+      $(elem).parent().parent().parent().parent().addClass("orange");
+    } else {
+      $(elem).parent().parent().parent().parent().addClass("green");
     }
   });
 </script>
