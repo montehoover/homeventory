@@ -28,6 +28,11 @@ class ItemsController < ApplicationController
   # Sets is_favorite of the item to true, thus adding it to the favorites list
   def update
     Item.find(params[:id]).update(is_favorite: true)
+    redirect_to items_path
+  end
+
+  def remove_favorite
+    Item.find(params[:id]).update(is_favorite: false)
     redirect_to favorites_path
   end
 
@@ -43,8 +48,23 @@ class ItemsController < ApplicationController
   end
 
 
-  def not_favorite
-    {is_favorite: false}
+  def add_to_list
+    Item.find(params[:id]).update(is_shopping_list: true)
+    redirect_to items_path
+  end
+
+  def remove_from_list
+    Item.find(params[:id]).update(is_shopping_list: false)
+    redirect_to lists_path
+  end
+
+  def clear_shopping_list
+    array = Item.where({user_id: @current_user.id})
+    puts "array is",array
+    for item in array
+      item.update(is_shopping_list: false)
+    end
+      redirect_to lists_path
   end
 
 

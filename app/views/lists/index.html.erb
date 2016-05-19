@@ -1,14 +1,28 @@
 <div class="container">
-	<div class="col-xs-12">
+	<div class="row" style="height: 80px;">
 		<h1>Shopping List</h1>
+		</div>
+		<div class="row" style="margin-bottom: 20px;">
+			<div class="col-xs-6 col-xs-offset-3">
+				<%= link_to "Clear Shopping List", "/items/clearlist", method: :put, class: "btn btn-default" %>
+			</div>
+		</div>
 			<% if @list.length > 0 %>
+
 			<% @list.each do |item| %>
+			<div class="panel panel-default">
+	  		<div class="panel-body">
+	  		<div class="item-img">
+			    	<img class="item-thumb" src="<%= item.img_url %>" width="150">
+			   </div>
 					<div class="list">
-		    		<%= item.name %>
+		    		<span class="list-header"><%= "#{item.brand} - #{item.name}" %></span>
+		    		<%= link_to "Delete", "/items/#{item.id}/notlist", method: :put, class: "btn btn-default" %>
 			  	</div>
+			  	  </div>
+	  		</div>
+			
 			<% end %>
-		<button class="btn btn-default" id="clear-list" type="submit">Clear List</button>
-		<a href="/items"><button class="btn btn-default" id="delete-item" type="submit">Add Items to List</button></a>
 		<% else %>
 		<div class="panel panel-default">
 	  		<div class="panel-body">
@@ -16,5 +30,9 @@
 	  		</div>
 			</div>
 		<% end %>
-	</div>
+
+
 </div>
+
+
+
