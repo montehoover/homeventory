@@ -5,7 +5,7 @@
 		  		<div class="show-img">
 		  			<img src="<%= @item.img_url %>" width="150">
 		  		</div>
-						<h1 class="show-item-name"><%= @item.name %></h1>
+						<h1 class="show-item-name"><%= "#{@item.brand} - #{@item.name}" %></h1>
 		    		<p class="quan">Quantity left: <%= @item.count %></p>
 		    		<div class="show-buttons">
 		    			<!-- <button class="btn btn-default" id="out-of-this" type="submit">I'm out of this!</button> -->

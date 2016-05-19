@@ -6,6 +6,14 @@ Rails.application.routes.draw do
   get 'logout' => 'sessions#destroy'
 
   put 'items/:id/reset' => 'items#reset_count'
+
+  put 'items/:id/nofav' => 'items#remove_favorite'
+
+  put 'items/:id/islist' => 'items#add_to_list'
+
+  put 'items/:id/notlist' => 'items#remove_from_list'
+
+  put 'items/clearlist' => 'items#clear_shopping_list'
   
   resources :items
   resources :lists
