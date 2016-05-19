@@ -17,11 +17,9 @@
 				    	<div class="item-name">
 				    		<a href="items/<%= item.id %>"><%= item.name %></a>
 				    	</div>  		
-				    		<%= form_tag("/lists", method: "post") do %>
-	            	<%= hidden_field_tag(:name, item.name) %>
+				    		
 	            	<div class="inv-buttons">
-	            	<%= submit_tag("+ List", class: "btn btn-default") %>
-	            	<% end %>
+	            	<%= link_to "+ List", "/items/#{item.id}/islist", method: :put, class: "btn btn-default" %>
 				    		<%= link_to "+ Favorites", item_path(item), method: :put, class: "btn btn-default" %>
 							</div>
 				    </div>

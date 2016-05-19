@@ -31,6 +31,11 @@ class ItemsController < ApplicationController
     redirect_to favorites_path
   end
 
+  def remove_favorite
+    Item.find(params[:id]).update(is_favorite: false)
+    redirect_to favorites_path
+  end
+
   def reset_count
     @item = Item.find(params[:id]).update(count: 0)
     redirect_to item_path(params[:id])
@@ -43,8 +48,14 @@ class ItemsController < ApplicationController
   end
 
 
-  def not_favorite
-    {is_favorite: false}
+  def add_to_list
+    Item.find(params[:id]).update(is_shopping_list: true)
+    redirect_to lists_path
+  end
+
+  def remove_from_list
+    Item.find(params[:id]).update(is_shopping_list: false)
+    redirect_to lists_path
   end
 
 
