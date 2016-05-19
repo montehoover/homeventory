@@ -1,11 +1,7 @@
 
 
-/*.inv-img {
-	text-align: center;
-}*/
 
 .inv-name {
-  /*float: right;*/
 	display: block;
 	vertical-align: top;
 	font-size: 20px;
@@ -15,8 +11,8 @@
 }
 
 .inv-buttons {
+	display: inline;
 	text-align: center;
-	/*display: inline-block;*/
 }
 
 .item-img {
@@ -28,6 +24,9 @@
 	margin-bottom: 15px;
 }
 
+.btn-default {
+	background-color: #31c398;
+}
 
 
 
@@ -68,7 +67,9 @@
 	}
 	.inv-buttons {
 		float: right;
-		margin-right: 10px;
+		margin-right: 20px;
+		text-align: center;
+		/*text-align: center;*/
 	}
 }
 

@@ -10,19 +10,21 @@
 			<% @items.each do |item| %>
 				<div class="panel panel-default">
 	  			<div class="panel-body">
-	  				<div class="item-img">
-	    				<img class="item-thumb" src="<%= item.img_url %>" width="150">
-	    			</div>
-	    			<div class="item-name"> 
-	    				<a href="items/<%= item.id %>"><%= "#{item.brand} - #{item.name}"%></a>
-	    			</div>
-		    		<div class="inv-buttons">
-			    		<%= form_tag("/lists", method: "post") do %>
-            	<%= hidden_field_tag(:name, item.name) %>
-            	<%= submit_tag("+ List", class: "btn btn-default") %>
-            	<% end %>
-			    		<%= link_to "+ Favorites", item_path(item), method: :put, class: "btn btn-default" %>
-			    	</div>
+	  				<div class="inv-name">
+			  			<div class="item-img">
+			    			<img class="item-thumb" src="<%= item.img_url %>" width="150">
+			    		</div>
+				    	<div class="item-name">
+				    		<a href="items/<%= item.id %>"><%= item.name %></a>
+				    	</div>  		
+				    		<%= form_tag("/lists", method: "post") do %>
+	            	<%= hidden_field_tag(:name, item.name) %>
+	            	<div class="inv-buttons">
+	            	<%= submit_tag("+ List", class: "btn btn-default") %>
+	            	<% end %>
+				    		<%= link_to "+ Favorites", item_path(item), method: :put, class: "btn btn-default" %>
+							</div>
+				    </div>
 		  		</div>
 				</div>
 			<% end %>
