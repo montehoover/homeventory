@@ -1,29 +1,31 @@
 
 <div class="container" id="inventory">
 	<div class="col-xs-12">
-		<div><span class="inventory-header">Inventory</span><a href="/search" class="btn btn-sq-xs btn-success">
-              <i class="glyphicon glyphicon-plus"></i> Add Item to Inventory</a></div>
+		<div>
+			<span class="inventory-header">Inventory</span>
+			<a href="/search" class="btn btn-sq-xs btn-success"><i class="glyphicon glyphicon-plus"></i> Add Item to Inventory</a>
+    </div>
+		
 		<% if @items.length > 0 %>
-		<% @items.each do |item| %>
-			<div class="panel panel-default">
-
-	  		<div class="panel-body inv-name">
-	  			<div class="item-img">
-	    			<img class="item-thumb" src="<%= item.img_url %>" width="150">
-	    		</div>
-	    		<div class="item-name">
-	    		<a href="items/<%= item.id %>"><%= item.name %></a>
-	    		</div>
+			<% @items.each do |item| %>
+				<div class="panel panel-default">
+	  			<div class="panel-body">
+	  				<div class="item-img">
+	    				<img class="item-thumb" src="<%= item.img_url %>" width="150">
+	    			</div>
+	    			<div class="item-name">
+	    				<a href="items/<%= item.id %>"><%= item.name %></a>
+	    			</div>
 		    		<div class="inv-buttons">
-			    	<%= form_tag("/lists", method: "post") do %>
-            <%= hidden_field_tag(:name, item.name) %>
-            <%= submit_tag("+ List", class: "btn btn-default") %>
-            <% end %>
-			    	<%= link_to "+ Favorites", item_path(item), method: :put, class: "btn btn-default" %>
+			    		<%= form_tag("/lists", method: "post") do %>
+            	<%= hidden_field_tag(:name, item.name) %>
+            	<%= submit_tag("+ List", class: "btn btn-default") %>
+            	<% end %>
+			    		<%= link_to "+ Favorites", item_path(item), method: :put, class: "btn btn-default" %>
 			    	</div>
-		  	</div>
-			</div>
-		<% end %>
+		  		</div>
+				</div>
+			<% end %>
 		<% else %>
 			<div class="panel panel-default">
 	  		<div class="panel-body">

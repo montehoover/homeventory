@@ -1,22 +1,22 @@
 
 
-.inv-img {
+/*.inv-img {
 	text-align: center;
-}
+}*/
 
 .inv-name {
-  float: right;
+  /*float: right;*/
 	display: block;
 	vertical-align: top;
 	font-size: 20px;
 	font-family: 'Noticia Text', serif;
 	text-align: center;
-  border: 1px solid black;
+  /*border: 1px solid black;*/
 }
 
 .inv-buttons {
 	text-align: center;
-	display: inline-block;
+	/*display: inline-block;*/
 }
 
 .item-img {
@@ -72,12 +72,12 @@
 	}
 }
 
-@media (min-width: 401px) and (max-width: 600px) {
+/*@media (min-width: 401px) and (max-width: 600px) {
 	img {
 		max-height: 100px;
 	}
 }
-
+*/
 
 .inventory-header {
   font-size: 26px;
