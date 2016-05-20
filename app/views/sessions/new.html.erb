@@ -1,29 +1,36 @@
 <div class="container">
-	<div class="col-xs-12">
-		<h1>Login</h1>
-			
+	<div class="row">
+		<div class="col-xs-12">
+			<h1>Login</h1>
+		</div>
+	</div>
+	<div class="row">
+		
 				<%= bootstrap_form_for :user do |f|  %>
-				<div class="email">
-				<%= f.text_field :email, placeholder: "Enter your email", wrapper: { class: 'email-field col-xs-8 col-xs-offset-2'} %>
-				</div>
-				<div class="password">
-				<%= f.password_field :password, placeholder: "Enter your password", wrapper: { class: 'pword-field col-xs-8 col-xs-offset-2'} %>
-				</div>
-				<div class="login">
-				<%= f.submit "Login", class: "btn btn-secondary login-btn" %>
-				</div>
-				<% end %>
-
-			<div class="facebook">
-				<%= link_to "Login with Facebook", "/auth/facebook", class: "btn btn-primary fb-btn" %>
-			</div>
+				
+				<%= f.text_field :email, placeholder: "Enter your email", wrapper: { class: 'email-field col-xs-8 col-xs-offset-2 col-lg-4 col-lg-offset-4'} %>
 			
-		<br>
+				
+				<%= f.password_field :password, placeholder: "Enter your password", wrapper: { class: 'pword-field col-xs-8 col-xs-offset-2 col-lg-4 col-lg-offset-4'} %>
+			
+				<%= f.submit "Login", class: "center-text btn btn-default login-btn col-xs-6 col-xs-offset-3 col-lg-4 col-lg-offset-4" %>
+				<% end %>
+	
+	</div>
+	<div class="row" style="margin-top: 10px;">
+				<%= link_to "Login with Facebook", "/auth/facebook", class: "center-text btn btn-primary fb-btn col-xs-6 col-xs-offset-3 col-lg-4 col-lg-offset-4" %>
+	</div>
+			
+	<div class="row">
 			<p class="sign-up">
 				<a style="color: white; text-decoration: none;" href="/signup">Sign up for a new account!</a>
 			</p>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
 			<div style="text-align: center;">
 			<%= link_to "Forgot password?", reset_path, :class => "forgot-password" %>
 			</div>
+		</div>
 	</div>
 </div>

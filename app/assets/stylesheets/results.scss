@@ -12,6 +12,7 @@
 }
 
 .result-name {
+	text-align: center;
 	margin-bottom: 25px;
 	font-size: 30px;
 }
@@ -35,6 +36,15 @@
 .img-result {
 	margin-right: 30px;
 	float: left;
+}
+
+.result-show-img {
+	height: 100px;
+}
+
+.result-show-img img {
+	display:block;
+	margin: 0 auto;
 }
 
 .count {
