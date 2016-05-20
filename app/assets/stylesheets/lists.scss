@@ -7,3 +7,35 @@
   color: black;
   font-weight: bold;
 }
+
+.clear-list {
+	text-align: center;
+}
+
+.list {
+	text-align: center;
+
+}
+
+.list-header {
+	font-family: 'Homemade Apple', cursive;
+	font-size: 25px;
+	margin-right: 10px;
+}
+
+.list-items {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.shopping-list {
+	background-color: white;
+	padding: 20px;	
+	border-radius: 10px;
+}
+
+@media (max-width: 400px) {
+	.list-header {
+		font-size: 20px;
+	}
+}

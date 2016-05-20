@@ -9,12 +9,14 @@
 .result-img {
 	margin-top: 15px;
 	margin-bottom: 15px;
+	display: block;
 }
 
 .result-name {
 	text-align: center;
 	margin-bottom: 25px;
 	font-size: 30px;
+	font-family: 'Noticia Text', serif;
 }
 
 .results-info {
@@ -25,9 +27,10 @@
 	text-align: center;
 }
 
-/*.result-link {
+.result-link {
+	font-size: 25px;
 	text-align: center;
-}*/
+}
 
 .link-search {
 	margin-top: 5px;
@@ -38,13 +41,13 @@
 	float: left;
 }
 
-.result-show-img {
-	height: 100px;
+.result-img {
+	display: block;
+	text-align: center;
 }
 
-.result-show-img img {
-	display:block;
-	margin: 0 auto;
+.content {
+	text-align: center;
 }
 
 .count {
@@ -64,6 +67,7 @@
 	display: block;
 	color: black;
 }
+
 
 /*img .img-result {
 	width: 150px;

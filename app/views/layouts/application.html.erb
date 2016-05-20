@@ -3,6 +3,10 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>HomeVentory</title>
+
+  <link href='https://fonts.googleapis.com/css?family=Fira+Sans:400,300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Homemade+Apple' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Walter+Turncoat' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Archivo+Black' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Covered+By+Your+Grace' rel='stylesheet' type='text/css'>
@@ -10,72 +14,82 @@
   <link href='https://fonts.googleapis.com/css?family=Martel:400,900' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Noticia+Text:400,700' rel='stylesheet' type='text/css'>    
   <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+   
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
 </head>
 <body>
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-     <% if @current_user %>
-            <span class="user-logged-in-mobile"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <%= @current_user.email %></span>  
-            <% end %>
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
+<div id="wrap">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+       <% if @current_user %>
+              <span class="user-logged-in-mobile"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <%= @current_user.email %></span>  
+              <% end %>
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
 
-      <a class="navbar-brand" href="/" id="navBrand">Homeventory</a>
-    </div>
+        <a class="navbar-brand" href="/" id="navBrand">Homeventory</a>
+      </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-      <ul class="nav navbar-nav">
-        <li><a class="nav-item" href="/items">Inventory</a></li>
-        <li><a class="nav-item" href="/search">Search</a></li>
-        <li><a class="nav-item" href="/favorites">Favorites</a></li>
-        <li><a class="nav-item" href="/lists">List</a></li>
-        <li><a class="nav-item" href="/logout">Logout</a></li>
-        <% if @current_user %>
-            <li><span class="user-logged-in"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <%= @current_user.email %></span>  </li>
-            <% end %>
+        <ul class="nav navbar-nav">
+          <li><a class="nav-item" href="/items">Inventory</a></li>
+          <li><a class="nav-item" href="/search">Search</a></li>
+          <li><a class="nav-item" href="/favorites">Favorites</a></li>
+          <li><a class="nav-item" href="/lists">List</a></li>
+          <li><a class="nav-item" href="/logout">Logout</a></li>
+          <% if @current_user %>
+              <li><span class="user-logged-in"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <%= @current_user.email %></span>  </li>
+              <% end %>
 
-      </ul>
-    </div><!-- /.navbar-collapse -->
+        </ul>
+      </div><!-- /.navbar-collapse -->
 
-  </div><!-- /.container-fluid -->
-</nav>
-<div class = "container">
+    </div><!-- /.container-fluid -->
+  </nav>
 
-
-<%= render "partials/flash" %>
-<%= yield %>
-
+  <div class = "container">
+    <%= render "partials/flash" %>
+    <%= yield %>
+  </div>
 </div>
-<script src="https://code.jquery.com/jquery-1.12.3.min.js"   integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ="   crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.6.1/jquery.lettering.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-<script>
-  $( document ).ready(function() {
-  $(".navbar-brand").lettering();
 
-  $('.item-quantity').each(function(index, elem) {
-    if( $(elem).text() == 0){
-      $(elem).parent().parent().parent().parent().addClass("red");
-    } else if ($(elem).text() <= 3){
-      $(elem).parent().parent().parent().parent().addClass("orange");
-    } else {
-      $(elem).parent().parent().parent().parent().addClass("green");
-    }
+<div id="footer">
+  <div class="container text-center">
+    &copy; 2016 Homeventory
+  </div>
+</div>
+
+  <script src="https://code.jquery.com/jquery-1.12.3.min.js"   integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ="   crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.6.1/jquery.lettering.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script>
+    $( document ).ready(function() {
+    $(".navbar-brand").lettering();
+
+    $('.item-quantity').each(function(index, elem) {
+      if( $(elem).text() == 0){
+        $(elem).parent().parent().parent().parent().addClass("red");
+      } else if ($(elem).text() <= 3){
+        $(elem).parent().parent().parent().parent().addClass("orange");
+      } else {
+        $(elem).parent().parent().parent().parent().addClass("green");
+      }
+    });
   });
-});
-</script>
+  </script>
+
 </body>
 </html>
