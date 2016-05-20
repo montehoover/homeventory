@@ -8,30 +8,26 @@
 			</div>
 		</div>
 			<% if @list.length > 0 %>
-
-			<% @list.each do |item| %>
-			<div class="panel panel-default">
-	  		<div class="panel-body">
-	  		<div class="item-img">
-			    	<img class="item-thumb" src="<%= item.img_url %>" width="150">
-			   </div>
-					<div class="list">
-		    		<span class="list-header"><%= "#{item.brand} - #{item.name}" %></span>
-		    		<%= link_to "Delete", "/items/#{item.id}/notlist", method: :put, class: "btn btn-default" %>
-			  	</div>
-			  	  </div>
-	  		</div>
-			
+				<% @list.each do |item| %>
+				<div class="panel panel-default">
+		  		<div class="panel-body">
+		  			<div class="item-img">
+				    	<img class="item-thumb" src="<%= item.img_url %>" width="150">
+				  	</div>
+						<div class="list">
+			    		<span class="list-header"><%= "#{item.brand} - #{item.name}" %></span>
+			    		<%= link_to "Delete", "/items/#{item.id}/notlist", method: :put, class: "btn btn-default" %>
+				  	</div>
+				 	</div>
+		  	</div>
 			<% end %>
 		<% else %>
-		<div class="panel panel-default">
+			<div class="panel panel-default">
 	  		<div class="panel-body">
-	  		<h3 style="color: black;">Your shopping list is currently empty.</h3>
+	  			<h3 style="color: black;">Your shopping list is currently empty.</h3>
 	  		</div>
 			</div>
 		<% end %>
-
-
 </div>
 
 
