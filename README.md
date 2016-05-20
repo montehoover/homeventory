@@ -20,6 +20,11 @@ Wireframe: <https://ninjamock.com/s/TV7WD>
 
 
 
+**User Stories:**
+
+Everyone has had the experience of forgetting a shopping list on a grocery trip and being forced to try to recall from memory everything you need, inevitably forgetting something (or a few things). Perhaps even worse is returning home from a grocery trip to realize you're out of something essential that somehow slipped past you, and now you have to make a second trip to the grocery store to get it. Homeventory was created to give users a way to keep track of their home inventory that is always accessible so that they can cut down on trips to the grocery store and make sure they never have to go without the items they need.
+
+
 **Implementation Methodology:**
 
 After an initial session clarifying our user stories and intended app purpose, we made wireframes and got a feel for the user experience. One of the harder steps for us involved structuring our tables - initially we were envisioning more models but ended up consolidating down by using boolean toggling within our main items table. This table structure also continued to evolve throughout the project with numerous added migrations. We also discussed our goals for this project and categorized them based on feasibility and importance to basic function. This helped up focus on the most important tasks, particularly 
