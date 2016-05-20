@@ -24,7 +24,7 @@ h1 {
 }
 
 .nav-item {
-	font-family: 'Archivo Black', sans-serif;
+	font-family: 'Fira Sans', sans-serif;
 }
 
 .char1 {
@@ -65,5 +65,13 @@ h1 {
 
 .green {
 	border: 6px solid #7fa724;
+}
+
+.btn:hover {
+	background-color: #fea610;
+}
+
+a:hover {
+	color: #fea610;
 }
 
