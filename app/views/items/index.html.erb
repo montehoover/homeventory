@@ -6,7 +6,7 @@
 			<span class="inventory-header">Inventory</span>
 			<a href="/search" class="btn btn-sq-xs btn-default"><i class="glyphicon glyphicon-search"></i> Add Item to Inventory</a>
   	</div>
-	<div class="row">	
+	<!-- <div class="row">	 -->
 		<% if @items.length > 0 %>
 			<% @items.each do |item| %>
 				<div class="panel panel-default">
@@ -24,8 +24,8 @@
 				    		<% end  %>
 				    		<p class="quantity-paragraph">Quantity: <span class="item-quantity"><%= qty %></span> </p>
 				    	</div>  		
-	</div>	
-	<div class="row">
+	<!-- </div>	 -->
+	<!-- <div class="row"> -->
 	            	<div class="inv-buttons">
 	            	<%= link_to "+ List", "/items/#{item.id}/islist", method: :put, class: "btn btn-default" %>
 				    		<%= link_to "+ Favorites", item_path(item), method: :put, class: "btn btn-default" %>
@@ -34,7 +34,7 @@
 		  		</div>
 				</div>
 			<% end %>
-	</div>		
+	<!-- </div>		 -->
 		<% else %>
 			<div class="panel panel-default">
 	  		<div class="panel-body">
