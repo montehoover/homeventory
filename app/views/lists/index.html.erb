@@ -1,33 +1,35 @@
 <div class="container">
-	<div class="row" style="height: 80px;">
-		<h1>Shopping List</h1>
-		</div>
-		<div class="row" style="margin-bottom: 20px;">
-			<div class="col-xs-12 text-center">
-				<%= link_to "Clear Shopping List", "/items/clearlist", method: :put, class: "btn btn-default", style: "align-item, center" %>
+	<div class="col-xs-12">
+		<div class="row" style="height: 80px;">
+			<h1>Shopping List</h1>
 			</div>
-		</div>
-			<% if @list.length > 0 %>
+			<div class="row" style="margin-bottom: 20px;">
+				<div class="clear-list">
+					<%= link_to "Clear Shopping List", "/items/clearlist", method: :put, class: "btn btn-default" %>
+				</div>
+			</div>
+				<% if @list.length > 0 %>
+			<div class="shopping-list">
 				<% @list.each do |item| %>
-				<div class="panel panel-default">
-		  		<div class="panel-body">
-		  			<div class="item-img">
-				    	<img class="item-thumb" src="<%= item.img_url %>" width="150">
-				  	</div>
 						<div class="list">
+							<li class="list-items">
 			    		<span class="list-header"><%= "#{item.brand} - #{item.name}" %></span>
 			    		<%= link_to "Delete", "/items/#{item.id}/notlist", method: :put, class: "btn btn-default" %>
+			    		</li>
 				  	</div>
-				 	</div>
-		  	</div>
-			<% end %>
-		<% else %>
+		  	
+				
+				<% end %>
+				</div>
+			<% else %>
 			<div class="panel panel-default">
-	  		<div class="panel-body">
-	  			<h3 style="color: black;">Your shopping list is currently empty.</h3>
-	  		</div>
-			</div>
-		<% end %>
+		  		<div class="panel-body">
+		  		<h3 style="color: black;">Your shopping list is currently empty.</h3>
+		  		</div>
+				</div>
+			<% end %>
+
+	</div>
 </div>
 
 
