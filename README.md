@@ -37,8 +37,8 @@ After getting to a point that we were all happy with, we started testing and ref
 **Installing locally:**
 
 1. Clone the project or download the zip file.
-2. From the command line inside the project directory, run "bundle install"
-3. Again on the command line, run "rake db:create"
-4. run "rake db:migrate"
-4. To start the server on localhost:3000, run "foreman run rails server"
+2. From the command line inside the project directory, run "bundle install".
+3. Again on the command line, run "rake db:create".
+4. Run "rake db:migrate".
+4. To start the server on localhost:3000, run "foreman run rails server".
 Now you're up and running Homeventory!
