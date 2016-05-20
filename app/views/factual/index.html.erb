@@ -2,6 +2,7 @@
 <div class="search-form">        
 	<form action="<%= results_path %>" method="get">
 	  <%= text_field_tag :q, params[:q] %>
-	  <%= submit_tag "search", :name => nil %>
+	  <%= submit_tag "search", :name => nil, class: "btn-primary" %>
 	</form>
 </div>
+
