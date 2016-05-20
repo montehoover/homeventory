@@ -72,7 +72,7 @@ class ItemsController < ApplicationController
 
   # Returns parameters needed for updating an item; doesn't include the count so old count doesn't get overwritten
   def update_item_params
-    {name: params[:name], brand: params[:brand], img_url: params[:img_url], factual_id: params[:factual_id], exp_date: params[:exp_date], user_id: params[:user_id], is_favorite: params[:is_favorite]}
+    {name: params[:name], brand: params[:brand], img_url: params[:img_url], factual_id: params[:factual_id], user_id: params[:user_id], is_favorite: params[:is_favorite]}
   end
 
   # Returns the parameters for creating a new item; takes hash from update_item_params and add count (key: value) to it
