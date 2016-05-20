@@ -1,12 +1,11 @@
 <div class="container">
 	<div class="row" style="height: 80px;">
 		<h1>Shopping List</h1>
-		</div>
-		<div class="row" style="margin-bottom: 20px;">
-			<div class="col-xs-6 col-xs-offset-3">
-				<%= link_to "Clear Shopping List", "/items/clearlist", method: :put, class: "btn btn-default" %>
-			</div>
-		</div>
+	</div>
+	<div class="row" style="margin-bottom: 20px;">
+				<%= link_to "Clear Shopping List", "/items/clearlist", method: :put, class: "btn btn-default col-xs-6 col-xs-offset-3 col-lg-4 col-lg-offset-4" %>
+		
+	</div>
 			<% if @list.length > 0 %>
 
 			<% @list.each do |item| %>
